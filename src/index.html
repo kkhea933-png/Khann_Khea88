@@ -1,76 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Bootstrap Site</title>
-    <link rel="stylesheet" href="style/view.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bootstrap Site</title>
+  <link rel="stylesheet" href="style/view.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg py-3"> <div class="container">
-    <a class="navbar-brand" href="#">
+  <nav class="navbar navbar-expand-lg py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">
         <img src="image/image.png" alt="Logo">
-    </a>
-    <form class="d-flex mx-lg-4 my-2 my-lg-0">
+      </a>
+      <form class="d-flex mx-lg-4 my-2 my-lg-0">
         <input class="form-control" type="search" placeholder="Search product..." aria-label="Search">
       </form>
       <!-- search -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown px-2"> <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Home</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Featured</a></li>
-            <li><a class="dropdown-item" href="#">New Arrivals</a></li>
-          </ul>
-        </li>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown px-2"> <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+              data-bs-toggle="dropdown">Home</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Featured</a></li>
+              <li><a class="dropdown-item" href="#">New Arrivals</a></li>
+            </ul>
+          </li>
 
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">About</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Products</a></li>
-            <li><a class="dropdown-item" href="#">Team</a></li>
-            <li><a class="dropdown-item" href="#">Accessories</a></li>
-          </ul>
-        </li>
+          <li class="nav-item dropdown px-2">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Products</a></li>
+              <li><a class="dropdown-item" href="#">Team</a></li>
+              <li><a class="dropdown-item" href="#">Accessories</a></li>
+            </ul>
+          </li>
 
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Contact</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Support</a></li>
-            <li><a class="dropdown-item" href="#">Sales</a></li>
-          </ul>
-        </li>
+          <li class="nav-item dropdown px-2">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Contact</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Support</a></li>
+              <li><a class="dropdown-item" href="#">Sales</a></li>
+            </ul>
+          </li>
 
-        <li class="nav-item dropdown px-2">
-          <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Tech News</a></li>
-            <li><a class="dropdown-item" href="#">Tutorials</a></li>
-          </ul>
-        </li>
-      </ul>
+          <li class="nav-item dropdown px-2">
+            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Blog</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Tech News</a></li>
+              <li><a class="dropdown-item" href="#">Tutorials</a></li>
+            </ul>
+          </li>
+        </ul>
 
-      
 
-      <div class="d-flex">
-        <a href="login.html" class="btn btn-light fw-bold text-primary">Login</a>
+
+        <div class="d-flex">
+          <a href="login.html" class="btn btn-light fw-bold text-primary">Login</a>
+        </div>
+
       </div>
-      
+    </div>
+  </nav>
+
+  <!-- Carousel -->
+  <div class="card-carousel">
+    <div id="carouselExampleIndicators" class="carousel slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://cdn.dotpe.in/kiranaStatic/Premium_Images/Art%20%26%20Craft/Art%20Craft%20Web/JPEG/wgth1.jpg"
+            class="d-block w-100 " alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://i.pinimg.com/736x/34/f0/c5/34f0c5c49ef49bc5e732013c482b758a.jpg" class="d-block w-100 "
+            alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="https://i.pinimg.com/736x/92/bb/f6/92bbf6b3ca0a18bd333952deac679b80.jpg" class="d-block w-100 "
+            alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
-</nav>
 
-<div class="container mt-5 text-center">
+  <div class="container mt-5 text-center">
     <h1>Welcome to the Homepage</h1>
     <p>The spacing is now balanced.</p>
-</div>
+  </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Card-Item -->
+  <div class="container-fluif mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 " style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>1.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 " style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 " style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 " style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 mt-3" style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 mt-3" style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 mt-3" style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 mt-3" style="width: outo;">
+              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Text Book</h5>
+                <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
