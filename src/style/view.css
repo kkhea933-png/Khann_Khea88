@@ -8,10 +8,11 @@
     background: linear-gradient(to right, rgb(70, 81, 168), rgb(141, 34, 223));
     box-shadow: 0 4px 10px rgba(9, 112, 57, 0.1);
     height: 80px;
+    position: relative;
 }
 
 .navbar-brand img {
-    height: 80px;
+    height: 90px;
   
 }
 
