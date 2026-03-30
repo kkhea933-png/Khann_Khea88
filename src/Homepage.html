@@ -8,6 +8,47 @@
   <link rel="stylesheet" href="style/view.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Footer */
+  footer {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #e2e8f0;
+    padding: 80px 0 20px;
+    margin-top: 100px;
+  }
+
+  footer h4,
+  footer h5 {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .social-icons a {
+    color: #e2e8f0;
+    font-size: 1.4rem;
+    margin-right: 20px;
+    transition: all var(--transition-speed);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+  }
+
+  .social-icons a:hover {
+    color: var(--primary-blue);
+    background: rgba(37, 99, 235, 0.2);
+    transform: translateY(-5px);
+  }
+</style>
 
 <body>
 
@@ -125,7 +166,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>1.25$ </p>
+                  <p>1.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -142,7 +183,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -159,7 +200,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -176,7 +217,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -193,7 +234,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -210,7 +251,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -227,7 +268,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -244,7 +285,7 @@
               <div class="card-body">
                 <h5 class="card-title">Text Book</h5>
                 <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
+                  <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -257,7 +298,39 @@
     </div>
   </div>
 
-
+  <footer id="contact">
+    <div class="container">
+      <div class="row g-5 mb-5">
+        <div class="col-lg-4">
+          <h4 class="mb-4"><i class="fas fa-book-open me-2"></i>Student Shop</h4>
+          <p class="text-light">Empowering students worldwide with premium books, stationery, and academic tools. Your
+            success is our mission.</p>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-4">Contact Information</h5>
+          <ul class="list-unstyled">
+            <li class="mb-3"><i class="fas fa-map-marker-alt me-3 text-primary"></i>123 Education Street, Phnom Penh,
+              Cambodia</li>
+            <li class="mb-3"><i class="fas fa-phone me-3 text-primary"></i>+855 (12) 345-678</li>
+            <li class="mb-3"><i class="fas fa-envelope me-3 text-primary"></i>hello@studentshop.com</li>
+          </ul>
+        </div>
+        <div class="col-lg-4">
+          <h5 class="mb-4">Follow Us</h5>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr style="border-color: rgba(255,255,255,0.1)">
+      <div class="text-center py-4">
+        <p class="text-light mb-0">&copy; 2026 Student Shop. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
