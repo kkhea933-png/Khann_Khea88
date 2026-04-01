@@ -82,7 +82,7 @@
             content: '';
             position: absolute;
             bottom: -5px;
-            left: 0;
+            left: 0;    
             width: 0;
             height: 2px;
             background: linear-gradient(90deg, var(--primary-blue), var(--accent-purple));
@@ -128,7 +128,7 @@
             color: var(--text-muted);
         }
 
-        /* Cart Icon */
+        /* Cart Icon
         .cart-icon-wrapper {
             position: relative;
             cursor: pointer;
@@ -140,8 +140,90 @@
         .cart-icon-wrapper:hover {
             color: var(--primary-blue);
             transform: scale(1.15);
-        }
+        } */
+        /* Enhanced Card Styling */
+.card-item .card {
+    border: none;
+    border-radius: 20px; /* Softer corners */
+    background: #ffffff;
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%; /* Keeps all cards same height in a row */
+    overflow: hidden;
+}
 
+/* Image Hover Effect */
+.card-item .card-img-top {
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px; /* Creates a "frame" effect inside the card */
+    transition: transform 0.5s ease;
+}
+
+.card-item .card:hover {
+    transform: translateY(-12px); /* Lifts card up */
+    box-shadow: var(--premium-shadow);
+}
+
+.card-item .card:hover .card-img-top {
+    transform: scale(1.08); /* Slight zoom on image */
+}
+
+/* Content Layout */
+.card-item .card-body {
+    padding: 1.5rem !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-item .card-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 0.75rem;
+    /* Limit title to 1 line for consistency */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-item .card-body p:not(.card-title) {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    height: 4.5em; /* Fixes height for descriptions */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+/* Pricing and Button Row */
+.card-item .add {
+    margin-top: auto; /* Pushes price/button to the bottom */
+    align-items: center;
+}
+
+.card-item .add p {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    margin: 0 !important;
+}
+
+.card-item .btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+    border: none;
+    border-radius: 50px;
+    padding: 8px 25px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card-item .btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    background: var(--secondary-blue);
+}
         .cart-badge {
             position: absolute;
             top: -10px;
@@ -257,15 +339,15 @@
             transition: all var(--transition-speed);
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             border: none;
-            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
-            color: #fff !important;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #ffffff !important;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-shop:hover {
             transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         .hero-image img {
@@ -409,7 +491,7 @@
         .btn-view {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             border: none;
-            color: #fff;
+            color: #000000;
             padding: 10px 20px;
             border-radius: 50px;
             font-weight: 600;
@@ -420,7 +502,7 @@
         .btn-view:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-            color: #fff;
+            color: #ffffff;
         }
 
         /* Modal Styling */
@@ -456,7 +538,52 @@
         }
         .login {
             margin-right: 40px;
+            border-radius: 30px;
         }
+       /* Google/YouTube Style Account Button */
+.google-style-account {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    text-decoration: none;
+    position: relative;
+    margin-right: 40px;
+}
+
+.google-style-account img {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+}
+
+/* The "Grey Circle" hover effect from Gmail/YouTube */
+.google-style-account:hover {
+    background-color: rgba(60, 64, 67, 0.1);
+}
+
+.google-style-account:active {
+    background-color: rgba(60, 64, 67, 0.2);
+}
+
+/* Optional: Add a small notification dot like YouTube */
+.google-style-account::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 10px;
+    height: 10px;
+    background-color: #ef4444;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
         .qr-img {
             max-width: 220px;
             margin-bottom: 20px;
@@ -562,6 +689,7 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
             border-radius: 10px;
         }
+        
     </style>
 </head>
 <body>
@@ -594,11 +722,11 @@
                 </ul>
             </div>
         </div>
-          <div class="login d-flex">
-                        <a href="login.html" class="btn btn-light fw-bold text-primary">
-                            <i class="fas fa-user me-2"></i>Login
-                        </a>
-                        </div>
+          <div class="ms-lg-4 d-flex align-items-center">
+    <a href="login.html" class="google-style-account" title="Google Account">
+        <img src="https://i.pinimg.com/736x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg" alt="User Avatar">
+    </a>
+</div>
     </nav>
     
     <!-- Hero Section -->
@@ -652,12 +780,13 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/1200x/94/82/31/9482311d4dad2c49ebfa1a377ca2c920.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Backpack</h5>
+                <p> designed for your daily campus life. It makes it easy to carry your textbooks</p>
                 <div class="add d-flex justify-content-between">
-                  <p>1.25$ </p>
+                  <p>6.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
@@ -669,27 +798,11 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/1200x/52/7b/11/527b110c966bcb54a018a13c336efd12.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Color-Pop Stationery Pouch</h5>
+                <p>Slim, stylish, and perfect for students on the go. Fits easily into any backpack while keeping your essentials secure.</p>
                 <div class="add d-flex justify-content-between">
                   <p>0.25$ </p>
                   <div>
@@ -703,10 +816,29 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/1200x/ba/06/e7/ba06e7de6fd8d5b905af75e7d30d8644.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Sticky Notes</h5>
+                <p>A gentle touch for your workspace. These high-quality adhesive notes offer a smooth writing surface and a variety of soothing colors to brighten your daily planning.</p>
+                <div class="add d-flex justify-content-between">
+                  <p>0.25$ </p>
+                  <div>
+                    <a href="#" class="btn btn-primary ​">ADD</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+          <div class="card-item">
+            <div class="card p-2 " style="width: outo;">
+              <img src="https://i.pinimg.com/736x/e9/ee/cc/e9eeccdd9a8f5321e110fc8f496b8484.jpg" class="card-img-top"
+                alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
+                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with anti-dry-out technology, they are perfect for long study sessions and beautiful note-taking.</p>
                 <div class="add d-flex justify-content-between">
                   <p>0.25$ </p>
                   <div>
@@ -720,10 +852,11 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/1200x/f4/5b/f4/f45bf4a055a9c1fe91a84de9118b6724.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
+                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with anti-dry-out technology, they are perfect for long study sessions and beautiful note-taking.</p>
                 <div class="add d-flex justify-content-between">
                   <p>0.25$ </p>
                   <div>
@@ -737,10 +870,11 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/736x/a1/59/db/a159db5ab3c020b440d7333245ab0c94.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Minimalist & Clean</h5>
+                <p>Keep your desk clutter-free with these durable metal mesh holders. The ventilated design makes it easy to see and access all your pens and highlighters.</p>
                 <div class="add d-flex justify-content-between">
                   <p>0.25$ </p>
                   <div>
@@ -754,10 +888,11 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/736x/b3/96/e3/b396e3cad0198e3af52664e1180f34ce.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Premium Pink Paper Clips (100 Pack)</h5>
+                <p>Keep your assignments and reports perfectly organized with this bulk pack of 100 vinyl-coated paper clips. Durable, rust-resistant, and won't snag your important documents.</p>
                 <div class="add d-flex justify-content-between">
                   <p>0.25$ </p>
                   <div>
@@ -771,11 +906,13 @@
         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
           <div class="card-item">
             <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/3a/90/ad/3a90ad125413f4bb7194f1fa516fc252.jpg" class="card-img-top"
+              <img src="https://i.pinimg.com/736x/8a/c6/2e/8ac62ed1f10ce6d0d0fe49db8c5557ed.jpg" class="card-img-top"
                 alt="...">
               <div class="card-body">
-                <h5 class="card-title">Text Book</h5>
+                <h5 class="card-title">Jumbo Chisel-Tip Permanent Markers</h5>
+                <p>Make your mark with confidence. These high-capacity markers feature a versatile chisel tip for both broad strokes and fine lines. Perfect for project boards, signage, and bold labeling.</p>
                 <div class="add d-flex justify-content-between">
+                    <p>0.25$ </p>
                   <div>
                     <a href="#" class="btn btn-primary ​">ADD</a>
                   </div>
