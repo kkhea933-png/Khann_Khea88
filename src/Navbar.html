@@ -689,6 +689,31 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
             border-radius: 10px;
         }
+        .dropdown-menu {
+    border: none;
+    border-radius: 15px;
+    box-shadow: var(--premium-shadow);
+    padding: 10px;
+    animation: fadeInDown 0.25s ease;
+}
+
+.dropdown-item {
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 500;
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+    color: var(--primary-blue);
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
         
     </style>
 </head>
@@ -705,7 +730,20 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+                   <li class="nav-item">
+                    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#categories" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Categories
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+        <li><a class="dropdown-item" href="#"> Books</a></li>
+        <li><a class="dropdown-item" href="#"> Stationery</a></li>
+        <li><a class="dropdown-item" href="#"> Bags & Accessories</a></li>
+        <li><a class="dropdown-item" href="#"> Desk & Lighting</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#"> All Products</a></li>
+    </ul>
+<!-- </li><a class="nav-link" href="#categories"></a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     <li class="nav-item">
                         <div class="nav-search">
