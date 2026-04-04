@@ -128,7 +128,7 @@
             color: var(--text-muted);
         }
 
-        /* Cart Icon
+        /* Cart Icon */
         .cart-icon-wrapper {
             position: relative;
             cursor: pointer;
@@ -140,90 +140,91 @@
         .cart-icon-wrapper:hover {
             color: var(--primary-blue);
             transform: scale(1.15);
-        } */
+        }
+
         /* Enhanced Card Styling */
-.card-item .card {
-    border: none;
-    border-radius: 20px; /* Softer corners */
-    background: #ffffff;
-    box-shadow: var(--card-shadow);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    height: 100%; /* Keeps all cards same height in a row */
-    overflow: hidden;
-}
+        .card-item .card {
+            border: none;
+            border-radius: 20px;
+            background: #ffffff;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            overflow: hidden;
+        }
 
-/* Image Hover Effect */
-.card-item .card-img-top {
-    height: 220px;
-    object-fit: cover;
-    border-radius: 15px; /* Creates a "frame" effect inside the card */
-    transition: transform 0.5s ease;
-}
+        /* Image Hover Effect */
+        .card-item .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.5s ease;
+        }
 
-.card-item .card:hover {
-    transform: translateY(-12px); /* Lifts card up */
-    box-shadow: var(--premium-shadow);
-}
+        .card-item .card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--premium-shadow);
+        }
 
-.card-item .card:hover .card-img-top {
-    transform: scale(1.08); /* Slight zoom on image */
-}
+        .card-item .card:hover .card-img-top {
+            transform: scale(1.08);
+        }
 
-/* Content Layout */
-.card-item .card-body {
-    padding: 1.5rem !important;
-    display: flex;
-    flex-direction: column;
-}
+        /* Content Layout */
+        .card-item .card-body {
+            padding: 1.5rem !important;
+            display: flex;
+            flex-direction: column;
+        }
 
-.card-item .card-title {
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--dark-gray);
-    margin-bottom: 0.75rem;
-    /* Limit title to 1 line for consistency */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+        .card-item .card-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.75rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-.card-item .card-body p:not(.card-title) {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    height: 4.5em; /* Fixes height for descriptions */
-    overflow: hidden;
-    margin-bottom: 1.5rem;
-}
+        .card-item .card-body p:not(.card-title) {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            height: 4.5em;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
 
-/* Pricing and Button Row */
-.card-item .add {
-    margin-top: auto; /* Pushes price/button to the bottom */
-    align-items: center;
-}
+        /* Pricing and Button Row */
+        .card-item .add {
+            margin-top: auto;
+            align-items: center;
+        }
 
-.card-item .add p {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: var(--primary-blue);
-    margin: 0 !important;
-}
+        .card-item .add p {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0 !important;
+        }
 
-.card-item .btn-primary {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-    border: none;
-    border-radius: 50px;
-    padding: 8px 25px;
-    font-weight: 600;
-    font-size: 0.85rem;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
-    transition: all 0.3s ease;
-}
+        .card-item .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            border: none;
+            border-radius: 50px;
+            padding: 8px 25px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+        }
 
-.card-item .btn-primary:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-    background: var(--secondary-blue);
-}
+        .card-item .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            background: var(--secondary-blue);
+        }
+
         .cart-badge {
             position: absolute;
             top: -10px;
@@ -241,124 +242,109 @@
             box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
         }
 
-        /* Hero Section */
-        .hero-section {
-            padding: 120px 0;
+        /* NEW BANNER SECTION */
+        .banner-section {
+            padding: 60px 0;
             background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 50%, #fef3c7 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -5%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-content {
+        .banner-slider-container {
             position: relative;
-            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--premium-shadow);
         }
 
-        .hero-title {
+        .banner-slider {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+            position: relative;
+        }
+
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .banner-slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Banner Navigation Arrows */
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-arrow:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .banner-arrow.prev {
+            left: 20px;
+        }
+
+        .banner-arrow.next {
+            right: 20px;
+        }
+
+        /* Banner Text Section */
+        .banner-text-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .banner-main-title {
             font-family: 'Playfair Display', serif;
-            font-size: 4rem;
+            font-size: 3rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
             letter-spacing: -1px;
         }
 
-        .hero-title .gradient-text {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-weight: 400;
-            max-width: 500px;
-        }
-
-        /* Hero Search Bar */
-        .hero-search-container {
-            max-width: 550px;
-            margin-bottom: 2.5rem;
-            position: relative;
-        }
-
-        .hero-search-container input {
-            width: 100%;
-            padding: 18px 30px 18px 60px;
-            border-radius: 50px;
-            border: none;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        .banner-subtitle {
             font-size: 1.1rem;
-            transition: all var(--transition-speed);
-        }
-
-        .hero-search-container input:focus {
-            box-shadow: 0 20px 50px rgba(37, 99, 235, 0.15);
-            outline: none;
-            transform: translateY(-2px);
-        }
-
-        .hero-search-container i {
-            position: absolute;
-            left: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.3rem;
-            color: var(--primary-blue);
-        }
-
-        .btn-shop {
-            padding: 14px 40px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all var(--transition-speed);
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            color: #ffffff !important;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-shop:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .hero-image img {
-            border-radius: 30px;
-            box-shadow: var(--premium-shadow);
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            color: var(--text-muted);
+            font-weight: 400;
         }
 
         /* Section Titles */
@@ -536,71 +522,72 @@
             text-align: center;
             border: 2px dashed var(--primary-blue);
         }
+
         .login {
             margin-right: 40px;
             border-radius: 30px;
         }
-       /* Google/YouTube Style Account Button */
-.google-style-account {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
-    text-decoration: none;
-    position: relative;
-    margin-right: 40px;
-}
 
-.google-style-account img {
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #e2e8f0;
-}
-
-/* The "Grey Circle" hover effect from Gmail/YouTube */
-.google-style-account:hover {
-    background-color: rgba(60, 64, 67, 0.1);
-}
-
-.google-style-account:active {
-    background-color: rgba(60, 64, 67, 0.2);
-}
-
-/* Optional: Add a small notification dot like YouTube */
-.google-style-account::after {
-    content: '';
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    width: 10px;
-    height: 10px;
-    background-color: #ef4444;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    display: block;
-}
-        .qr-img {
-            max-width: 220px;
-            margin-bottom: 20px;
-            border-radius: 15px;
-            background: #fff;
-            padding: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        /* Google/YouTube Style Account Button */
+        .google-style-account {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background-color 0.2s ease;
+            text-decoration: none;
+            position: relative;
+            margin-right: 40px;
         }
 
-        .payment-total {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .google-style-account img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid #e2e8f0;
+        }
+
+        .google-style-account:hover {
+            background-color: rgba(60, 64, 67, 0.1);
+        }
+
+        .google-style-account:active {
+            background-color: rgba(60, 64, 67, 0.2);
+        }
+
+        .google-style-account::after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: #ef4444;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: block;
+        }
+
+
+        .btn-shop {
+            padding: 14px 40px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all var(--transition-speed);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            border: none;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #ffffff !important;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-shop:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         /* Footer */
@@ -670,11 +657,19 @@
         }
 
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
+            .banner-main-title {
+                font-size: 2rem;
             }
             .section-title {
                 font-size: 2rem;
+            }
+            .banner-slider {
+                height: 250px;
+            }
+            .banner-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
             }
         }
 
@@ -689,62 +684,71 @@
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
             border-radius: 10px;
         }
+
         .dropdown-menu {
-    border: none;
-    border-radius: 15px;
-    box-shadow: var(--premium-shadow);
-    padding: 10px;
-    animation: fadeInDown 0.25s ease;
-}
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--premium-shadow);
+            padding: 10px;
+            animation: fadeInDown 0.25s ease;
+        }
 
-.dropdown-item {
-    border-radius: 10px;
-    padding: 10px 16px;
-    font-weight: 500;
-    color: var(--text-muted);
-    transition: all 0.2s ease;
-}
+        .dropdown-item {
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
 
-.dropdown-item:hover {
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
-    color: var(--primary-blue);
-}
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+            color: var(--primary-blue);
+        }
 
-@keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-8px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="#"><i class="fas fa-book-open me-2"></i>Student Shop</a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="#home"><i class="fas fa-book-open me-2"></i>Student Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-                   <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
                     <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#categories" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Categories
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-        <li><a class="dropdown-item" href="#"> Books</a></li>
-        <li><a class="dropdown-item" href="#"> Stationery</a></li>
-        <li><a class="dropdown-item" href="#"> Bags & Accessories</a></li>
-        <li><a class="dropdown-item" href="#"> Desk & Lighting</a></li>
-        <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#"> All Products</a></li>
-    </ul>
-<!-- </li><a class="nav-link" href="#categories"></a></li> -->
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categories
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                            <li><a class="dropdown-item" href="#">Books & Textbooks</a></li>
+                            <li><a class="dropdown-item" href="#">Stationery</a></li>
+                            <li><a class="dropdown-item" href="#">Backpacks & Bags</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
                     <li class="nav-item">
                         <div class="nav-search">
                             <i class="fas fa-search"></i>
@@ -760,208 +764,186 @@
                 </ul>
             </div>
         </div>
-          <div class="ms-lg-4 d-flex align-items-center">
-    <a href="login.html" class="google-style-account" title="Google Account">
-        <img src="https://i.pinimg.com/736x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg" alt="User Avatar">
-    </a>
-</div>
+        <div class="ms-lg-4 d-flex align-items-center">
+            <a href="login.html" class="google-style-account" title="Google Account">
+                <img src="https://i.pinimg.com/736x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg" alt="User Avatar">
+            </a>
+        </div>
     </nav>
     
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
+    <!-- NEW BANNER SECTION -->
+    <section id="home" class="banner-section">
         <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 hero-content animate__animated animate__fadeInLeft">
-                    <h1 class="hero-title">Welcome to <span class="gradient-text">Student Shop</span></h1>
-                    <p class="hero-subtitle">Your premium destination for books, stationery, and academic essentials. Elevate your learning experience with quality tools.</p>
-                    
-                    <!-- Hero Search Bar -->
-                    <div class="hero-search-container">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="heroSearchInput" placeholder="What are you looking for today?" onkeyup="syncSearch(this.value)">
+            <!-- Banner Slider -->
+            <div class="banner-slider-container">
+                <div class="banner-slider">
+                    <div class="banner-slide active">
+                        <img src="https://i.pinimg.com/1200x/27/0b/69/270b6937e15af59295aa87f94ebcf3cc.jpg" alt="Banner 1">
                     </div>
-                    
-                    <a href="#products" class="btn-shop"><i class="fas fa-shopping-bag me-2"></i>Explore Products</a>
+                    <div class="banner-slide">
+                        <img src="https://i.pinimg.com/1200x/94/82/31/9482311d4dad2c49ebfa1a377ca2c920.jpg" alt="Banner 2">
+                    </div>
+                    <div class="banner-slide">
+                        <img src="https://i.pinimg.com/1200x/52/7b/11/527b110c966bcb54a018a13c336efd12.jpg" alt="Banner 3">
+                    </div>
                 </div>
-                <div class="col-lg-6 hero-image d-none d-lg-block animate__animated animate__fadeInRight">
-                    <img src="https://i.pinimg.com/736x/92/bb/f6/92bbf6b3ca0a18bd333952deac679b80.jpg" alt="Student Shop Hero" class="img-fluid">
-                </div>
+                <button class="banner-arrow prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+                <button class="banner-arrow next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
             </div>
-        </div>
-    </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-5">
-        <div class="container">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Featured Products</h2>
-                <p class="section-subtitle">Handpicked essentials curated for your academic success</p>
-            </div>
-            
-            <div class="row g-4" id="product-grid">
-                <!-- Products will be injected by JavaScript -->
-            </div>
-            
-            <!-- No Results Message -->
-            <div id="noResults" class="no-results">
-                <i class="fas fa-search"></i>
-                <h3>No products found</h3>
-                <p class="text-muted">Try adjusting your search to find what you're looking for.</p>
-                <button class="btn btn-outline-primary rounded-pill px-4 mt-2" onclick="clearSearch()">Clear Search</button>
+            <!-- Banner Text -->
+            <div class="banner-text-section animate__animated animate__fadeInUp">
+                <h1 class="banner-main-title">Welcome To My Student Shop</h1>
+                <p class="banner-subtitle">The spacing is now balanced.A premium student store experience designed for easy browsing, smart shopping, and fast access to study essentials.</p>
+                    <div class="hero-actions"></p>
             </div>
         </div>
     </section>
-    <!-- card-item -->
-      <div class="container-fluif mt-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/94/82/31/9482311d4dad2c49ebfa1a377ca2c920.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Backpack</h5>
-                <p> designed for your daily campus life. It makes it easy to carry your textbooks</p>
-                <div class="add d-flex justify-content-between">
-                  <p>6.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+ 
+
+    <!-- Card Items Section -->
+    <div class="container-fluif mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 " style="width: outo;">
+                            <img src="https://i.pinimg.com/1200x/94/82/31/9482311d4dad2c49ebfa1a377ca2c920.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Backpack</h5>
+                                <p> designed for your daily campus life. It makes it easy to carry your textbooks</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>6.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/52/7b/11/527b110c966bcb54a018a13c336efd12.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Color-Pop Stationery Pouch</h5>
-                <p>Slim, stylish, and perfect for students on the go. Fits easily into any backpack while keeping your essentials secure.</p>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 " style="width: outo;">
+                            <img src="https://i.pinimg.com/1200x/52/7b/11/527b110c966bcb54a018a13c336efd12.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Color-Pop Stationery Pouch</h5>
+                                <p>Slim, stylish, and perfect for students on the go. Fits easily into any backpack while keeping your essentials secure.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/ba/06/e7/ba06e7de6fd8d5b905af75e7d30d8644.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Sticky Notes</h5>
-                <p>A gentle touch for your workspace. These high-quality adhesive notes offer a smooth writing surface and a variety of soothing colors to brighten your daily planning.</p>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 " style="width: outo;">
+                            <img src="https://i.pinimg.com/1200x/ba/06/e7/ba06e7de6fd8d5b905af75e7d30d8644.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Sticky Notes</h5>
+                                <p>A gentle touch for your workspace. These high-quality adhesive notes offer a smooth writing surface and a variety of soothing colors to brighten your daily planning.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 " style="width: outo;">
-              <img src="https://i.pinimg.com/736x/e9/ee/cc/e9eeccdd9a8f5321e110fc8f496b8484.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
-                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with anti-dry-out technology, they are perfect for long study sessions and beautiful note-taking.</p>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 " style="width: outo;">
+                            <img src="https://i.pinimg.com/736x/e9/ee/cc/e9eeccdd9a8f5321e110fc8f496b8484.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
+                                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with anti-dry-out technology, they are perfect for long study sessions and beautiful note-taking.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/1200x/f4/5b/f4/f45bf4a055a9c1fe91a84de9118b6724.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
-                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with anti-dry-out technology, they are perfect for long study sessions and beautiful note-taking.</p>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 mt-3" style="width: outo;">
+                            <img src="https://i.pinimg.com/1200x/f4/5b/f4/f45bf4a055a9c1fe91a84de9118b6724.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
+                                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with anti-dry-out technology, they are perfect for long study sessions and beautiful note-taking.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/736x/a1/59/db/a159db5ab3c020b440d7333245ab0c94.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Minimalist & Clean</h5>
-                <p>Keep your desk clutter-free with these durable metal mesh holders. The ventilated design makes it easy to see and access all your pens and highlighters.</p>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 mt-3" style="width: outo;">
+                            <img src="https://i.pinimg.com/736x/a1/59/db/a159db5ab3c020b440d7333245ab0c94.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Minimalist & Clean</h5>
+                                <p>Keep your desk clutter-free with these durable metal mesh holders. The ventilated design makes it easy to see and access all your pens and highlighters.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/736x/b3/96/e3/b396e3cad0198e3af52664e1180f34ce.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Premium Pink Paper Clips (100 Pack)</h5>
-                <p>Keep your assignments and reports perfectly organized with this bulk pack of 100 vinyl-coated paper clips. Durable, rust-resistant, and won't snag your important documents.</p>
-                <div class="add d-flex justify-content-between">
-                  <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 mt-3" style="width: outo;">
+                            <img src="https://i.pinimg.com/736x/b3/96/e3/b396e3cad0198e3af52664e1180f34ce.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Premium Pink Paper Clips (100 Pack)</h5>
+                                <p>Keep your assignments and reports perfectly organized with this bulk pack of 100 vinyl-coated paper clips. Durable, rust-resistant, and won't snag your important documents.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-          <div class="card-item">
-            <div class="card p-2 mt-3" style="width: outo;">
-              <img src="https://i.pinimg.com/736x/8a/c6/2e/8ac62ed1f10ce6d0d0fe49db8c5557ed.jpg" class="card-img-top"
-                alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Jumbo Chisel-Tip Permanent Markers</h5>
-                <p>Make your mark with confidence. These high-capacity markers feature a versatile chisel tip for both broad strokes and fine lines. Perfect for project boards, signage, and bold labeling.</p>
-                <div class="add d-flex justify-content-between">
-                    <p>0.25$ </p>
-                  <div>
-                    <a href="#" class="btn btn-primary ​">ADD</a>
-                  </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
+                    <div class="card-item">
+                        <div class="card p-2 mt-3" style="width: outo;">
+                            <img src="https://i.pinimg.com/736x/8a/c6/2e/8ac62ed1f10ce6d0d0fe49db8c5557ed.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Jumbo Chisel-Tip Permanent Markers</h5>
+                                <p>Make your mark with confidence. These high-capacity markers feature a versatile chisel tip for both broad strokes and fine lines. Perfect for project boards, signage, and bold labeling.</p>
+                                <div class="add d-flex justify-content-between">
+                                    <p>0.25$ </p>
+                                    <div>
+                                        <a href="#" class="btn btn-primary ​">ADD</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 
     <!-- Product Details Modal -->
     <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
@@ -974,7 +956,7 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-6">
-                            <img id="modalProductImg" src="" class="img-fluid rounded-4 shadow-lg mb-3" alt="Product">
+                            <img id="modalProductImg" src="https://i.pinimg.com/736x/00/8c/54/008c54c0c3280aba16e4537d619eed6a.jpg" class="img-fluid rounded-4 shadow-lg mb-3" alt="Product">
                         </div>
                         <div class="col-md-6">
                             <h3 id="modalProductTitle" class="fw-bold mb-2"></h3>
@@ -1093,6 +1075,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        // Banner Slider Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance slides every 5 seconds
+        setInterval(nextSlide, 5000);
+
         // Product Data
         const products = [
             { id: 1, name: "Premium Hardcover Notebook", price: 12.50, img: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "High-quality 120gsm paper, perfect for journaling and note-taking." },
@@ -1110,7 +1115,7 @@
         ];
 
         let currentProduct = null;
-        let cartCount = 0;j
+        let cartCount = 0;
 
         // Render Products
         function renderProducts(filteredList = products) {
@@ -1128,7 +1133,7 @@
                 <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.05}s">
                     <div class="product-card" onclick="viewDetails(${p.id})">
                         <div class="product-img-container">
-                            ${p.badge ? <div class="badge-container">${getBadgeHTML(p.badge)}</div> : ''}
+                            ${p.badge ? `<div class="badge-container">${getBadgeHTML(p.badge)}</div>` : ''}
                             <img src="${p.img}" class="product-img" alt="${p.name}">
                         </div>
                         <div class="product-info">
@@ -1161,7 +1166,6 @@
             );
             renderProducts(filtered);
             
-            // Scroll to products if searching from hero
             if (query.length > 0 && document.activeElement.id === 'heroSearchInput') {
                 document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
             }
@@ -1174,7 +1178,6 @@
 
         function clearSearch() {
             document.getElementById('navSearchInput').value = '';
-            document.getElementById('heroSearchInput').value = '';
             renderProducts(products);
         }
 
@@ -1183,7 +1186,7 @@
             currentProduct = products.find(p => p.id === id);
             document.getElementById('modalProductName').innerText = currentProduct.name;
             document.getElementById('modalProductTitle').innerText = currentProduct.name;
-            document.getElementById('modalProductPrice').innerText = $${currentProduct.price.toFixed(2)};
+            document.getElementById('modalProductPrice').innerText = `$${currentProduct.price.toFixed(2)}`;
             document.getElementById('modalProductDesc').innerText = currentProduct.desc;
             document.getElementById('modalProductImg').src = currentProduct.img;
             document.getElementById('productQty').value = 1;
@@ -1198,7 +1201,7 @@
 
         function showPayment() {
             const qty = parseInt(document.getElementById('productQty').value);
-            document.getElementById('paymentTotal').innerText = $${(currentProduct.price * qty).toFixed(2)};
+            document.getElementById('paymentTotal').innerText = `$${(currentProduct.price * qty).toFixed(2)}`;
             bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
             document.getElementById('payment-step-1').classList.remove('d-none');
             document.getElementById('payment-step-2').classList.add('d-none');
