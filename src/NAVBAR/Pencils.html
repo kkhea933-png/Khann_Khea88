@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f4f5f9;
+        font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #152033;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        padding: 42px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card {
+        background: #ffffff;
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(33, 45, 73, 0.08);
+        border: 1px solid rgba(15, 23, 42, 0.06);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 28px 70px rgba(33, 45, 73, 0.14);
+    }
+
+    .card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .card-content {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        flex: 1;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        margin: 0;
+        color: #12263f;
+        text-transform: capitalize;
+    }
+
+    .card-text {
+        margin: 0;
+        color: #576273;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        min-height: 56px;
+    }
+
+    .card-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: auto;
+    }
+
+    .card-price {
+        font-weight: 700;
+        font-size: 1rem;
+        color: #111f3a;
+    }
+
+    .card button {
+        border: none;
+        border-radius: 999px;
+        padding: 0 26px;
+        height: 42px;
+        background: linear-gradient(135deg, #5c6ac4 0%, #4f7bff 100%);
+        color: #ffffff;
+        cursor: pointer;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        transition: transform 0.2s ease, filter 0.2s ease;
+        box-shadow: 0 14px 24px rgba(79, 123, 255, 0.18);
+    }
+
+    .card button:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+    }
+
+    .card button:focus {
+        outline: none;
+        box-shadow: 0 0 0 4px rgba(103, 124, 187, 0.18);
+    }
+
+    @media (max-width: 520px) {
+        .cards-container {
+            padding: 18px;
+            gap: 18px;
+        }
+
+        .card img {
+            height: 180px;
+        }
+    }
+</style>
+<body>
+    <div class="cards-container">
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/9b/bc/bd/9bbcbdac71bc9c4bf5fd80448297d8bc.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Pencil Set</h1>
+                <p class="card-text">Four Candies Metal Mechanical Pencil Set, 3PCS Art Drafting Pencils 0.5, 0.7, 0.9MM & 2PCS 2MM Mechanical Drawing Pencils with 420PCS Leads (4B 2B HB 2H Color) for Writing Sketching Drawing (Silver)</p>
+                <div class="card-bottom">
+                    <span class="card-price">$.25</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/91/6a/7e/916a7e1df429a2fc2ab40f7bbc3ed5b5.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Micro Mechanical Pencil</h1>
+                <p class="card-text">A high-quality mechanical pencil with a sleek design. Perfect for precise drawing and writing tasks.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$4.23</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/ea/29/47/ea2947b213225b1f9c6657d26a653a08.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Premium Pencil</h1>
+                <p class="card-text">A premium mechanical pencil with a sturdy build and smooth operation. Perfect for professional drawing and writing tasks.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$5.99</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/70/17/c7/7017c7d4de14bb247a44c58223779545.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Standard Pencil</h1>
+                <p class="card-text">A simple and high-quality mechanical pencil with a sleek design. Perfect for everyday writing and drawing tasks.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$3.99</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/8d/96/4b/8d964b9e050c5bb9e18098f4c970f22f.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Pencil Set</h1>
+                <p class="card-text">Four Candies Metal Mechanical Pencil Set, 3PCS Art Drafting Pencils 0.5, 0.7, 0.9MM & 2PCS 2MM Mechanical Drawing Pencils with 420PCS Leads (4B 2B HB 2H Color) for Writing Sketching Drawing (Silver)</p>
+                <div class="card-bottom">
+                    <span class="card-price">$2.78</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/ab/6b/36/ab6b36e2a4c42e855fd7db9cd8185cae.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Maped</h1>
+                <p class="card-text">A high-quality mechanical pencil with a sleek design. Perfect for precise drawing and writing .</p>
+                <div class="card-bottom">
+                    <span class="card-price">$4.23</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/fe/e9/b8/fee9b851ca2f3e4ec3e12ed0c7b58610.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">SPDD</h1>
+                <p class="card-text">SPDD Mechanical Pencil,2.0mm Automatic Pencils,Kawaii Automatic Drafting Pencil Refill Mechanical Pencil Drawing Writing Supplies(Pencil-random color 2pcs)</p>
+                <div class="card-bottom">
+                    <span class="card-price">$8.23</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/39/b8/ca/39b8ca5286b5326d8b798560c49ff6d1.jpg" alt="Textbook">
+            <div class="card-content">
+                <h1 class="card-title">Faber-castell</h1>
+                <p class="card-text">A stylish and durable backpack suitable for students. It has enough space to carry textbooks, notebooks, and daily essentials. Lightweight and comfortable for everyday use.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$4.23</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -857,8 +857,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#home">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#products">Products</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                            <li><a class="dropdown-item" href="Booktext.html" onclick="filterProducts('book')">Book</a></li>
+                            <li><a class="dropdown-item" href="Pencils.html" onclick="filterProducts('pencil')">Pencil</a></li>
+                            <li><a class="dropdown-item" href="Toys.html" onclick="filterProducts('toy')">Toy</a></li>
+                            <li><a class="dropdown-item" href="Pens.html" onclick="filterProducts('note')">Pens</a></li>
+                            <li><a class="dropdown-item" href="Navbar.html" onclick="filterProducts('')">All Products</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
@@ -1076,7 +1086,8 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div
+                >
                 <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
                     <div class="card-item">
                         <div class="card p-2 mt-3" style="width: outo;">
@@ -1136,6 +1147,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>
@@ -1320,7 +1332,7 @@
             { id: 9, name: "Sticky Note Mega Bundle", price: 10.00, img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Various sizes and colors to keep your reminders organized." },
             { id: 10, name: "Desktop Organizer Lamp", price: 32.00, img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "LED lamp with built-in pen holder and USB charging port." },
             { id: 11, name: "World Atlas 2026 Edition", price: 55.00, img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Comprehensive maps and geographical data for social studies." },
-            { id: 12, name: "Stainless Steel Water Bottle", price: 18.00, img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=500&q=80", badge: "Eco-Friendly", desc: "Keeps drinks cold for 24 hours. Stay hydrated on campus." }
+            { id: 12, name: "High-Capacity Power Bank", price: 42.00, img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "Never run out of battery during long library sessions." }
         ];
 
         let currentProduct = null;
@@ -1375,8 +1387,9 @@
             );
             renderProducts(filtered);
 
-            if (query.length > 0 && document.activeElement.id === 'heroSearchInput') {
-                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+            const productsSection = document.getElementById('products');
+            if (productsSection) {
+                productsSection.scrollIntoView({ behavior: 'smooth' });
             }
         }
 

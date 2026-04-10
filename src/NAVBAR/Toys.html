@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #f4f5f9;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: #152033;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Better for scrolling through many cards */
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 42px;
+            width: 100%;
+            max-width: 1400px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(33, 45, 73, 0.08);
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 70px rgba(33, 45, 73, 0.14);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            background-color: #f0f0f0;
+        }
+
+        .card-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1; /* Makes the content area fill available space */
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin: 0;
+            color: #12263f;
+            font-weight: 700;
+        }
+
+        .card-text {
+            margin: 0;
+            color: #576273;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            flex-grow: 1; /* Pushes the bottom section down */
+        }
+
+        .card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .card-price {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #111f3a;
+        }
+
+        .card button {
+            border: none;
+            border-radius: 999px;
+            padding: 0 26px;
+            height: 42px;
+            background: linear-gradient(135deg, #174ab1 0%, #104fce 100%); /* Warm toy-like colors */
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: 700;
+            transition: transform 0.2s ease, filter 0.2s ease;
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.2);
+        }
+
+        .card button:hover {
+            transform: translateY(-1px);
+            filter: brightness(1.05);
+        }
+
+        @media (max-width: 520px) {
+            .cards-container {
+                padding: 18px;
+                gap: 18px;
+            }
+            .card img {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-container">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1594787318286-3d835c1d207f?auto=format&fit=crop&q=80&w=500" alt="Yellow Toy Car">
+            <div class="card-content">
+                <h2 class="card-title">Classic Toy Car</h2>
+                <p class="card-text">A vibrant, die-cast yellow car built for speed and durability. Perfect for racing enthusiasts.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$5.25</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/ed/88/5f/ed885f14b815ff592469d0990d38eb80.jpg" alt="Teddy Bear">
+            <div class="card-content">
+                <h2 class="card-title">Cuddly Teddy</h2>
+                <p class="card-text">Ultra-soft plush bear made with hypoallergenic materials. Your child's new best friend for bedtime.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$8.99</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&q=80&w=500" alt="Building Blocks">
+            <div class="card-content">
+                <h2 class="card-title">Architect Blocks</h2>
+                <p class="card-text">50-piece wooden block set. Great for developing motor skills and spatial awareness in toddlers.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$12.50</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1546776310-eef45dd6d63c?auto=format&fit=crop&q=80&w=500" alt="Toy Robot">
+            <div class="card-content">
+                <h2 class="card-title">Neo-Bot 3000</h2>
+                <p class="card-text">An interactive robot with LED eyes and sound effects. Teaches basic logic and robotics concepts.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$15.99</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&q=80&w=500" alt="Doll">
+            <div class="card-content">
+                <h2 class="card-title">Fairytale Doll</h2>
+                <p class="card-text">Complete with a removable outfit and accessories. Encourages imaginative roleplay and social skills.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$9.78</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/bb/42/8a/bb428ad60ed7ca93a62155138ce96b16.jpg" alt="Toy Train">
+            <div class="card-content">
+                <h2 class="card-title">Express Train</h2>
+                <p class="card-text">A wooden locomotive with magnetic couplings. Connects easily to all major wooden railway tracks.</p>
+                <div class="card-bottom">
+                    <span class="card-price">$6.23</span>
+                    <button type="button">ADD</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
