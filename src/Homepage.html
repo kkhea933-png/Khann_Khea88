@@ -1331,19 +1331,19 @@
     </section>
 
     <!-- Products Section (JS-rendered) -->
-   
-            <div class="row g-4" id="product-grid"></div>
-            
 
-            <!-- No Results Message -->
-            <div id="noResults" class="no-results">
-                <i class="fas fa-search"></i>
-                <h4 class="mt-3">No products found</h4>
-                <p class="text-muted">Try adjusting your search to find what you're looking for.</p>
-                <button class="btn btn-outline-primary rounded-pill px-4 mt-2" onclick="clearSearch()">Clear
-                    Search</button>
-            </div>
-        </div>
+    <div class="row g-4" id="product-grid"></div>
+
+
+    <!-- No Results Message -->
+    <div id="noResults" class="no-results">
+        <i class="fas fa-search"></i>
+        <h4 class="mt-3">No products found</h4>
+        <p class="text-muted">Try adjusting your search to find what you're looking for.</p>
+        <button class="btn btn-outline-primary rounded-pill px-4 mt-2" onclick="clearSearch()">Clear
+            Search</button>
+    </div>
+    </div>
     </section>
 
 
@@ -1363,53 +1363,55 @@
 
 
     <!-- Product Details Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="modalProductName">Product Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <img id="modalProductImg" src="" class="img-fluid rounded-4 shadow-lg mb-3 w-100"
-                                style="height:280px;object-fit:cover;" alt="Product">
-                        </div>
-                        <div class="col-md-6">
-                            <h3 id="modalProductTitle" class="fw-bold mb-2"
-                                style="font-family:'Playfair Display',serif;"></h3>
-                            <div class="product-rating mb-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2 text-muted small">(128 reviews)</span>
+    <div class="container">
+        <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title fw-bold" id="modalProductName">Product Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <img id="modalProductImg" src="" class="img-fluid rounded-4 shadow-lg mb-3 w-100"
+                                    style="height:280px;object-fit:cover;" alt="Product">
                             </div>
-                            <p id="modalProductPrice" class="product-price mb-3"></p>
-                            <p id="modalProductDesc" class="text-muted mb-4" style="font-size:.9rem;"></p>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-bold small">Edition</label>
-                                <select class="form-select rounded-pill form-select-sm">
-                                    <option selected>Standard Edition</option>
-                                    <option>Premium Pack</option>
-                                    <option>Student Bundle</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label fw-bold small">Quantity</label>
-                                <div class="input-group" style="width: 130px;">
-                                    <button class="btn btn-outline-secondary rounded-start-pill btn-sm" type="button"
-                                        onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
-                                    <input type="text" id="productQty" class="form-control text-center form-control-sm"
-                                        value="1" readonly>
-                                    <button class="btn btn-outline-secondary rounded-end-pill btn-sm" type="button"
-                                        onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
+                            <div class="col-md-6">
+                                <h3 id="modalProductTitle" class="fw-bold mb-2"
+                                    style="font-family:'Playfair Display',serif;"></h3>
+                                <div class="product-rating mb-2">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                    <span class="ms-2 text-muted small">(128 reviews)</span>
                                 </div>
-                            </div>
+                                <p id="modalProductPrice" class="product-price mb-3"></p>
+                                <p id="modalProductDesc" class="text-muted mb-4" style="font-size:.9rem;"></p>
 
-                            <button class="btn btn-shop w-100 py-3" onclick="showPayment()"><i
-                                    class="fas fa-credit-card me-2"></i>Buy Now</button>
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold small">Edition</label>
+                                    <select class="form-select rounded-pill form-select-sm">
+                                        <option selected>Standard Edition</option>
+                                        <option>Premium Pack</option>
+                                        <option>Student Bundle</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold small">Quantity</label>
+                                    <div class="input-group" style="width: 130px;">
+                                        <button class="btn btn-outline-secondary rounded-start-pill btn-sm"
+                                            type="button" onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
+                                        <input type="text" id="productQty"
+                                            class="form-control text-center form-control-sm" value="1" readonly>
+                                        <button class="btn btn-outline-secondary rounded-end-pill btn-sm" type="button"
+                                            onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-shop w-100 py-3" onclick="showPayment()"><i
+                                        class="fas fa-credit-card me-2"></i>Buy Now</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1428,7 +1430,8 @@
                 <div class="modal-body text-center">
                     <div id="payment-step-1">
                         <p class="mb-4 text-muted small">Scan the QR code below to complete your payment via
-                            <strong>KHQR / ABA Pay</strong>.</p>
+                            <strong>KHQR / ABA Pay</strong>.
+                        </p>
                         <div class="qr-container mb-4">
                             <img src="./image/QRcode.png" class="qr-img" alt="Payment QR">
                             <p class="text-muted small mb-2">Total Amount</p>
@@ -1475,10 +1478,10 @@
                     <p>Empowering students worldwide with premium books, stationery, and academic tools. Your success is
                         our mission.</p>
                     <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1HrrPG6CqU/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://t.me/Khann_Khea"><i class="fa-brands fa-telegram"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.tiktok.com/@khea_khea2"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-6">
@@ -1506,8 +1509,8 @@
                     <ul class="list-unstyled">
                         <li class="mb-3"><i class="fas fa-map-marker-alt me-3"></i>123 Education Street, Phnom Penh,
                             Cambodia</li>
-                        <li class="mb-3"><i class="fas fa-phone me-3"></i>+855 (12) 345-678</li>
-                        <li class="mb-3"><i class="fas fa-envelope me-3"></i>hello@studentshop.com</li>
+                        <li class="mb-3"><i class="fas fa-phone me-3"></i>+855 972599127</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-3"></i>kkhea933@gmail.com</li>
                         <li><i class="fas fa-clock me-3"></i>Mon – Sat: 8:00am – 6:00pm</li>
                     </ul>
                 </div>
