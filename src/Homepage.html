@@ -190,7 +190,6 @@
             box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
         }
 
-        /* Google/YouTube Style Account Button */
         .google-style-account {
             width: 38px;
             height: 38px;
@@ -216,10 +215,6 @@
             background-color: rgba(60, 64, 67, 0.1);
         }
 
-        .google-style-account:active {
-            background-color: rgba(60, 64, 67, 0.2);
-        }
-
         .google-style-account::after {
             content: '';
             position: absolute;
@@ -230,329 +225,6 @@
             background-color: #22c55e;
             border: 2px solid #fff;
             border-radius: 50%;
-        }
-
-        /* ── HERO ── */
-        .hero-section {
-            padding: 90px 0 80px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 55%, #fef9ec 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-section::after {
-            content: '';
-            position: absolute;
-            bottom: -60px;
-            left: -60px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.07) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(37, 99, 235, 0.08);
-            color: var(--primary-blue);
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 6px 16px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(37, 99, 235, 0.15);
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.4rem;
-            font-weight: 800;
-            margin-bottom: 1.2rem;
-            line-height: 1.1;
-            letter-spacing: -1px;
-        }
-
-        .hero-title .gradient-text {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.05rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-            font-weight: 400;
-            max-width: 480px;
-            line-height: 1.7;
-        }
-
-        /* Hero Search Bar */
-        .hero-search-container {
-            max-width: 520px;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .hero-search-container input {
-            width: 100%;
-            padding: 16px 24px 16px 56px;
-            border-radius: 50px;
-            border: none;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            font-size: 1rem;
-            transition: all var(--transition-speed);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .hero-search-container input:focus {
-            box-shadow: 0 12px 40px rgba(37, 99, 235, 0.18);
-            outline: none;
-        }
-
-        .hero-search-container i {
-            position: absolute;
-            left: 22px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.1rem;
-            color: var(--primary-blue);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 32px;
-            margin-top: 2rem;
-        }
-
-        .hero-stat-item {
-            text-align: left;
-        }
-
-        .hero-stat-num {
-            font-size: 1.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .hero-stat-label {
-            font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        .btn-shop {
-            padding: 13px 36px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 50px;
-            transition: all var(--transition-speed);
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            border: none;
-            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.28);
-            color: #fff !important;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-shop:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 36px rgba(37, 99, 235, 0.38);
-        }
-
-        .btn-shop-outline {
-            padding: 13px 36px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border-radius: 50px;
-            transition: all var(--transition-speed);
-            background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue) !important;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-shop-outline:hover {
-            background: var(--primary-blue);
-            color: #fff !important;
-            transform: translateY(-3px);
-        }
-
-        .hero-image img {
-            border-radius: 24px;
-            box-shadow: 0 30px 80px rgba(37, 99, 235, 0.15);
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .hero-carousel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-bottom: 40px;
-            position: relative;
-            padding: 0 24px;
-        }
-
-        .hero-nav {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: #fff;
-            border: 1px solid rgba(226, 232, 240, 0.95);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
-            cursor: pointer;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .hero-nav:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 24px 45px rgba(15, 23, 42, 0.12);
-        }
-
-        .hero-nav i {
-            color: var(--primary-blue);
-            font-size: 1.25rem;
-        }
-
-        .hero-slide {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            min-height: 700px;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 32px 100px rgba(15, 23, 42, 0.16);
-            background: #fff;
-        }
-
-        .hero-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            transition: transform 0.55s ease;
-        }
-
-        .hero-slide:hover img {
-            transform: scale(1.03);
-        }
-
-        .hero-slide-counter {
-            position: absolute;
-            bottom: 16px;
-            right: 16px;
-            background: rgba(255, 255, 255, 0.92);
-            color: var(--dark-gray);
-            padding: 8px 14px;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
-        }
-
-        .hero-caption {
-            text-align: center;
-            max-width: 860px;
-            margin: 0 auto 18px;
-        }
-
-        .hero-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--primary-blue);
-            margin-bottom: 8px;
-            display: inline-block;
-        }
-
-        .hero-heading {
-            font-family: 'Playfair Display', serif;
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 0.7rem;
-            line-height: 1.02;
-        }
-
-        .hero-caption .gradient-text {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-note {
-            color: #475569;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .hero-actions {
-            display: inline-flex;
-            gap: 14px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .hero-actions .btn-shop,
-        .hero-actions .btn-shop-outline {
-            padding: 14px 36px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all var(--transition-speed);
-        }
-
-        .hero-actions .btn-shop-outline {
-            background: transparent;
-            border: 2px solid var(--primary-blue);
-            color: var(--primary-blue) !important;
-        }
-
-        .hero-actions .btn-shop-outline:hover {
-            background: var(--primary-blue);
-            color: #fff !important;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-16px);
-            }
         }
 
         /* ── TRUST STRIP ── */
@@ -692,7 +364,7 @@
         .product-img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
@@ -805,60 +477,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 18px rgba(37, 99, 235, 0.28);
             color: #fff;
-        }
-
-        /* ── CARD-ITEM SECTION (static cards) ── */
-        .card-item-section {
-            padding: 60px 0 80px;
-            background: #fff;
-        }
-
-        .card-item-section .card {
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all .3s;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-        }
-
-        .card-item-section .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
-            border-color: rgba(37, 99, 235, 0.2);
-        }
-
-        .card-item-section .card-img-top {
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-item-section .card-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .card-item-section .card-body {
-            padding: 14px 16px;
-        }
-
-        .card-item-section .add p {
-            font-weight: 700;
-            color: var(--primary-blue);
-            margin-bottom: 0;
-        }
-
-        .card-item-section .btn-primary {
-            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
-            border: none;
-            border-radius: 50px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            padding: 5px 16px;
-        }
-
-        .card-item-section .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
         }
 
         /* ── MODAL STYLING ── */
@@ -1066,14 +684,8 @@
         }
 
         /* ── SCROLLBAR ── */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
             border-radius: 8px;
@@ -1081,81 +693,70 @@
 
         /* ── RESPONSIVE ── */
         @media (max-width: 992px) {
-            .nav-search {
-                max-width: 100%;
-                margin: 10px 0;
-            }
-
-            .hero-stats {
-                gap: 20px;
-                flex-wrap: wrap;
-            }
+            .nav-search { max-width: 100%; margin: 10px 0; }
         }
 
         @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 1.9rem;
-            }
-
-            .topbar .d-flex {
-                flex-direction: column;
-                gap: 4px;
-                text-align: center;
-            }
+            .section-title { font-size: 1.9rem; }
+            .topbar .d-flex { flex-direction: column; gap: 4px; text-align: center; }
         }
 
-        /* NEW BANNER SECTION */
-        h1,
-        p {
-            color: black;
+        h1, p { color: black; }
 
-        }
-
-        /* Sets the transition speed between slides */
         .carousel-item {
             transition: transform 1.2s ease-in-out;
-            /* Smooth sliding duration */
         }
 
-        /* Ensure the banner is full-width and images maintain aspect ratio */
         .carousel-item img {
             height: 60vh;
-            /* Default height for mobile */
             object-fit: cover;
         }
 
-        /* Responsive height for larger screens */
         @media (min-width: 768px) {
-            .carousel-item img {
-                height: 500px;
-                /* Fixed height for desktop */
-            }
+            .carousel-item img { height: 500px; }
         }
 
-        /* Optional: Adding a dark overlay so text is easier to read */
         .carousel-item::after {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.3);
         }
 
-        /* Styling the caption for better mobile visibility */
-        .carousel-caption {
-            bottom: 20%;
-            z-index: 2;
+        .carousel-caption { bottom: 20%; z-index: 2; }
+        .carousel-caption h1 { font-weight: 700; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+
+        /* Products section wrapper */
+        .products-wrapper {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
         }
 
-        .carousel-caption h1 {
-            font-weight: 700;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        /* Fix for form-select with rounded-pill class */
+        .form-select.rounded-pill {
+            border-radius: 50px !important;
+            padding: 0.75rem 2rem 0.75rem 1.2rem !important;
+            height: auto;
+            min-height: 44px;
+            border: 1.5px solid #e2e8f0;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+            background-position: right 1rem center;
+            background-size: 18px;
+            background-repeat: no-repeat;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+
+        .form-select.rounded-pill:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-select.rounded-pill:disabled {
+            background-color: #f1f5f9;
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -1166,8 +767,7 @@
     <div class="topbar d-none d-md-block">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <span><i class="fas fa-tag me-2"></i>Free shipping on orders over $25 — Use code
-                    <strong>STUDENT10</strong> for 10% off</span>
+                <span><i class="fas fa-tag me-2"></i>Free shipping on orders over $25 — Use code <strong>STUDENT10</strong> for 10% off</span>
                 <div class="d-flex gap-4">
                     <a href="#"><i class="fas fa-headset me-1"></i>Support</a>
                     <a href="#"><i class="fas fa-truck me-1"></i>Track Order</a>
@@ -1181,8 +781,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#"><i class="fas fa-book-open me-2"></i>Student Shop</a>
-            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarNav">
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -1195,76 +794,59 @@
                 <div class="d-flex align-items-center gap-2">
                     <div class="nav-search">
                         <i class="fas fa-search"></i>
-                        <input type="text" id="navSearchInput" placeholder="Search products..."
-                            onkeyup="filterProducts(this.value)">
+                        <input type="text" id="navSearchInput" placeholder="Search products..." onkeyup="filterProducts(this.value)">
                     </div>
                     <div class="cart-icon-wrapper" data-bs-toggle="modal" data-bs-target="#cartModal">
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-badge" id="cart-count">0</span>
                     </div>
                     <a href="login.html" class="google-style-account" title="My Account">
-                        <img src="https://i.pinimg.com/736x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg"
-                            alt="User Avatar">
+                        <img src="https://i.pinimg.com/736x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg" alt="User Avatar">
                     </a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- NEW BANNER SECTION -->
+    <!-- BANNER / CAROUSEL -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://i.pinimg.com/736x/ba/af/fa/baaffae3e5b1f74a1d3f5e20c92c120c.jpg" class="d-block w-100"
-                    alt="Student Shop 1">
+                <img src="https://i.pinimg.com/736x/ba/af/fa/baaffae3e5b1f74a1d3f5e20c92c120c.jpg" class="d-block w-100" alt="Student Shop 1">
                 <div class="carousel-caption">
                     <h1>WELCOME TO MY STUDENTS SHOP</h1>
                     <p>A premium student store experience designed for easy browsing and smart shopping.</p>
                 </div>
             </div>
-
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/1200x/a1/88/0a/a1880aa0f361dae8cb9a047b17a477ef.jpg"
-                    class="d-block w-100" alt="Student Shop 2">
+                <img src="https://i.pinimg.com/1200x/a1/88/0a/a1880aa0f361dae8cb9a047b17a477ef.jpg" class="d-block w-100" alt="Student Shop 2">
                 <div class="carousel-caption">
                     <h1>QUALITY GEAR</h1>
                     <p>Fast access to study essentials and smart tools for your education.</p>
                 </div>
             </div>
-
             <div class="carousel-item">
-                <img src="https://i.pinimg.com/1200x/61/7f/88/617f8880b4e3aa09002d9abd41dc3a93.jpg"
-                    class="d-block w-100" alt="Student Shop 3">
+                <img src="https://i.pinimg.com/1200x/61/7f/88/617f8880b4e3aa09002d9abd41dc3a93.jpg" class="d-block w-100" alt="Student Shop 3">
                 <div class="carousel-caption">
                     <h1>STUDY SMART</h1>
-                    <p>The spacing is now balanced. Your one-stop shop for student life.</p>
+                    <p>Your one-stop shop for student life.</p>
                 </div>
             </div>
         </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-    </section>
 
     <!-- Trust Strip -->
     <div class="trust-strip">
@@ -1273,37 +855,25 @@
                 <div class="col-6 col-md-3">
                     <div class="trust-item">
                         <div class="trust-icon"><i class="fas fa-shipping-fast"></i></div>
-                        <div class="trust-text">
-                            <strong>Free Shipping</strong>
-                            <span>Orders over $25</span>
-                        </div>
+                        <div class="trust-text"><strong>Free Shipping</strong><span>Orders over $25</span></div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="trust-item">
                         <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div class="trust-text">
-                            <strong>Secure Payment</strong>
-                            <span>KHQR / ACELEDA Pay</span>
-                        </div>
+                        <div class="trust-text"><strong>Secure Payment</strong><span>KHQR / ACELEDA Pay</span></div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="trust-item">
                         <div class="trust-icon"><i class="fas fa-undo-alt"></i></div>
-                        <div class="trust-text">
-                            <strong>Easy Returns</strong>
-                            <span>30-day policy</span>
-                        </div>
+                        <div class="trust-text"><strong>Easy Returns</strong><span>30-day policy</span></div>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div class="trust-item">
                         <div class="trust-icon"><i class="fas fa-headset"></i></div>
-                        <div class="trust-text">
-                            <strong>24/7 Support</strong>
-                            <span>Always here to help</span>
-                        </div>
+                        <div class="trust-text"><strong>24/7 Support</strong><span>Always here to help</span></div>
                     </div>
                 </div>
             </div>
@@ -1330,29 +900,29 @@
         </div>
     </section>
 
-    <!-- Products Section (JS-rendered) -->
-
-    <div class="row g-4" id="product-grid"></div>
-
-
-    <!-- No Results Message -->
-    <div id="noResults" class="no-results">
-        <i class="fas fa-search"></i>
-        <h4 class="mt-3">No products found</h4>
-        <p class="text-muted">Try adjusting your search to find what you're looking for.</p>
-        <button class="btn btn-outline-primary rounded-pill px-4 mt-2" onclick="clearSearch()">Clear
-            Search</button>
-    </div>
-    </div>
+    <!-- Products Section -->
+    <section id="products" class="products-wrapper">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Our Collection</span>
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Everything you need to excel in your studies</p>
+            </div>
+            <div class="row g-4" id="product-grid"></div>
+            <div id="noResults" class="no-results">
+                <i class="fas fa-search"></i>
+                <h4 class="mt-3">No products found</h4>
+                <p class="text-muted">Try adjusting your search to find what you're looking for.</p>
+                <button class="btn btn-outline-primary rounded-pill px-4 mt-2" onclick="clearSearch()">Clear Search</button>
+            </div>
+        </div>
     </section>
-
 
     <!-- Newsletter Section -->
     <section class="newsletter-section text-white text-center">
         <div class="container position-relative" style="z-index:2">
             <h2 class="mb-3">Stay Ahead of Your Studies</h2>
-            <p class="mb-4" style="color:rgba(255,255,255,0.8); max-width:480px; margin:0 auto 24px;">Get exclusive
-                deals, new arrivals and study tips delivered straight to your inbox.</p>
+            <p class="mb-4" style="color:rgba(255,255,255,0.8); max-width:480px; margin:0 auto 24px;">Get exclusive deals, new arrivals and study tips delivered straight to your inbox.</p>
             <div class="input-group newsletter-input-group">
                 <input type="email" class="form-control" placeholder="Enter your email address...">
                 <button class="btn" type="button"><i class="fas fa-paper-plane me-2"></i>Subscribe</button>
@@ -1360,58 +930,46 @@
         </div>
     </section>
 
-
-
     <!-- Product Details Modal -->
-    <div class="container">
-        <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title fw-bold" id="modalProductName">Product Details</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <img id="modalProductImg" src="" class="img-fluid rounded-4 shadow-lg mb-3 w-100"
-                                    style="height:280px;object-fit:cover;" alt="Product">
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalProductName">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img id="modalProductImg" src="" class="img-fluid rounded-4 shadow-lg mb-3 w-100" style="height:280px;object-fit:cover;" alt="Product">
+                        </div>
+                        <div class="col-md-6">
+                            <h3 id="modalProductTitle" class="fw-bold mb-2" style="font-family:'Playfair Display',serif;"></h3>
+                            <div class="product-rating mb-2">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="ms-2 text-muted small">(128 reviews)</span>
                             </div>
-                            <div class="col-md-6">
-                                <h3 id="modalProductTitle" class="fw-bold mb-2"
-                                    style="font-family:'Playfair Display',serif;"></h3>
-                                <div class="product-rating mb-2">
-                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                    <span class="ms-2 text-muted small">(128 reviews)</span>
-                                </div>
-                                <p id="modalProductPrice" class="product-price mb-3"></p>
-                                <p id="modalProductDesc" class="text-muted mb-4" style="font-size:.9rem;"></p>
-
-                                <div class="mb-3">
-                                    <label class="form-label fw-bold small">Edition</label>
-                                    <select class="form-select rounded-pill form-select-sm">
-                                        <option selected>Standard Edition</option>
-                                        <option>Premium Pack</option>
-                                        <option>Student Bundle</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="form-label fw-bold small">Quantity</label>
-                                    <div class="input-group" style="width: 130px;">
-                                        <button class="btn btn-outline-secondary rounded-start-pill btn-sm"
-                                            type="button" onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
-                                        <input type="text" id="productQty"
-                                            class="form-control text-center form-control-sm" value="1" readonly>
-                                        <button class="btn btn-outline-secondary rounded-end-pill btn-sm" type="button"
-                                            onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-shop w-100 py-3" onclick="showPayment()"><i
-                                        class="fas fa-credit-card me-2"></i>Buy Now</button>
+                            <p id="modalProductPrice" class="product-price mb-3"></p>
+                            <p id="modalProductDesc" class="text-muted mb-4" style="font-size:.9rem;"></p>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold small">Edition</label>
+                                <select class="form-select rounded-pill form-select-sm">
+                                    <option selected>Standard Edition</option>
+                                    <option>Premium Pack</option>
+                                    <option>Student Bundle</option>
+                                </select>
                             </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold small">Quantity</label>
+                                <div class="input-group" style="width: 130px;">
+                                    <button class="btn btn-outline-secondary rounded-start-pill btn-sm" type="button" onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
+                                    <input type="text" id="productQty" class="form-control text-center form-control-sm" value="1" readonly>
+                                    <button class="btn btn-outline-secondary rounded-end-pill btn-sm" type="button" onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <button class="btn btn-shop w-100 py-3" onclick="showPayment()" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); border:none; color:#fff; border-radius:50px; font-weight:600;">
+                                <i class="fas fa-credit-card me-2"></i>Buy Now
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1429,24 +987,23 @@
                 </div>
                 <div class="modal-body text-center">
                     <div id="payment-step-1">
-                        <p class="mb-4 text-muted small">Scan the QR code below to complete your payment via
-                            <strong>KHQR / ABA Pay</strong>.
-                        </p>
+                        <p class="mb-4 text-muted small">Scan the QR code below to complete your payment via <strong>KHQR / ABA Pay</strong>.</p>
                         <div class="qr-container mb-4">
                             <img src="./image/QRcode.png" class="qr-img" alt="Payment QR">
                             <p class="text-muted small mb-2">Total Amount</p>
                             <h3 class="payment-total" id="paymentTotal">$0.00</h3>
                         </div>
-                        <button class="btn btn-shop w-100 py-3" onclick="confirmPayment()"><i
-                                class="fas fa-check me-2"></i>Confirm Payment</button>
+                        <button class="btn w-100 py-3" onclick="confirmPayment()" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); border:none; color:#fff; border-radius:50px; font-weight:600;">
+                            <i class="fas fa-check me-2"></i>Confirm Payment
+                        </button>
                     </div>
                     <div id="payment-step-2" class="d-none animate__animated animate__fadeIn py-5">
                         <i class="fas fa-check-circle success-icon mb-4"></i>
                         <h2 class="fw-bold mt-3 mb-2" style="font-family:'Playfair Display',serif;">Thank You!</h2>
-                        <p class="text-muted mb-4 small">Your purchase was successful. We'll notify you once your order
-                            is shipped.</p>
-                        <button class="btn btn-shop mt-4 px-5" data-bs-dismiss="modal"><i
-                                class="fas fa-home me-2"></i>Back to Shop</button>
+                        <p class="text-muted mb-4 small">Your purchase was successful. We'll notify you once your order is shipped.</p>
+                        <button class="btn mt-4 px-5" data-bs-dismiss="modal" style="background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%); border:none; color:#fff; border-radius:50px; font-weight:600; padding:12px 36px;">
+                            <i class="fas fa-home me-2"></i>Back to Shop
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1475,8 +1032,7 @@
             <div class="row g-5 mb-4">
                 <div class="col-lg-4">
                     <h4 class="mb-3"><i class="fas fa-book-open me-2"></i>Student Shop</h4>
-                    <p>Empowering students worldwide with premium books, stationery, and academic tools. Your success is
-                        our mission.</p>
+                    <p>Empowering students worldwide with premium books, stationery, and academic tools. Your success is our mission.</p>
                     <div class="social-icons mt-4">
                         <a href="https://www.facebook.com/share/1HrrPG6CqU/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://t.me/Khann_Khea"><i class="fa-brands fa-telegram"></i></a>
@@ -1507,8 +1063,7 @@
                 <div class="col-lg-4">
                     <h5 class="mb-3" style="font-size:.95rem;">Contact Information</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3"></i>123 Education Street, Phnom Penh,
-                            Cambodia</li>
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3"></i>123 Education Street, Phnom Penh, Cambodia</li>
                         <li class="mb-3"><i class="fas fa-phone me-3"></i>+855 972599127</li>
                         <li class="mb-3"><i class="fas fa-envelope me-3"></i>kkhea933@gmail.com</li>
                         <li><i class="fas fa-clock me-3"></i>Mon – Sat: 8:00am – 6:00pm</li>
@@ -1519,12 +1074,9 @@
             <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <p>&copy; 2026 Student Shop. All rights reserved.</p>
                 <div class="d-flex gap-3 mt-2 mt-md-0">
-                    <a href="#" class="footer-links"
-                        style="display:inline;font-size:.8rem;color:#64748b;text-decoration:none;">Terms</a>
-                    <a href="#" class="footer-links"
-                        style="display:inline;font-size:.8rem;color:#64748b;text-decoration:none;">Privacy</a>
-                    <a href="#" class="footer-links"
-                        style="display:inline;font-size:.8rem;color:#64748b;text-decoration:none;">Cookies</a>
+                    <a href="#" style="font-size:.8rem;color:#64748b;text-decoration:none;">Terms</a>
+                    <a href="#" style="font-size:.8rem;color:#64748b;text-decoration:none;">Privacy</a>
+                    <a href="#" style="font-size:.8rem;color:#64748b;text-decoration:none;">Cookies</a>
                 </div>
             </div>
         </div>
@@ -1534,31 +1086,142 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Product Data
+        // ── UPDATED PRODUCT DATA with proper study product images ──
         const products = [
-            { id: 1, name: "Premium Hardcover Notebook", price: 12.50, img: "https://i.pinimg.com/1200x/6b/01/79/6b0179f1d5fb372d708dcaaa02c1b0d8.jpg", badge: "New", desc: "High-quality 120gsm paper, perfect for journaling and note-taking." },
-            { id: 2, name: "Ergonomic Student Backpack", price: 45.00, img: "https://i.pinimg.com/736x/59/9c/99/599c99b9758dffa9139b2f673c3457ae.jpg", badge: "Best Seller", desc: "Water-resistant material with multiple compartments for laptops and books." },
-            { id: 3, name: "Professional Drawing Set", price: 29.99, img: "https://i.pinimg.com/736x/8e/e7/7f/8ee77f670b79c521e8fce7923f5c2ca0.jpg", badge: "", desc: "Complete set of 24 graphite pencils and charcoal for art students." },
-            { id: 4, name: "Calculus: Early Transcendentals", price: 85.00, img: "https://i.pinimg.com/1200x/6c/84/7b/6c847b0a500a6aa48b47a4982ec1bf66.jpg", badge: "Best Seller", desc: "The definitive guide for engineering and math students." },
-            { id: 5, name: "Mechanical Pencil Set (0.5mm)", price: 8.50, img: "https://kiehberg.in/media/catalog/product/w/a/walther-walther-cp88-cal-45-mm-177-pellet-black-product-sku-4160000.jpg?optimize=medium&bg-color=255,255,255&fit=bounds&height=1000&width=1250&canvas=1250:1000", badge: "", desc: "Precision writing tools with comfortable grip and extra lead." },
-            { id: 6, name: "A4 Refillable Binder", price: 15.00, img: "https://i.pinimg.com/1200x/8c/ec/b6/8cecb65d7fab175fea8a9390dd28dcda.jpg", badge: "", desc: "Durable binder with 4 rings, perfect for organizing lecture notes." },
-            { id: 7, name: "Highlighter Pastel Pack", price: 6.99, img: "https://www.gunemporium.com.au/wp-content/uploads/2022/10/M92A1-e1660874248764.png", badge: "New", desc: "6 soft pastel colors that don't bleed through paper." },
-            { id: 8, name: "Wireless Silent Mouse", price: 19.50, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Compact and quiet, ideal for library study sessions." },
-            { id: 9, name: "Sticky Note Mega Bundle", price: 10.00, img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Various sizes and colors to keep your reminders organized." },
-            { id: 10, name: "Desktop Organizer Lamp", price: 32.00, img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "LED lamp with built-in pen holder and USB charging port." },
-            { id: 11, name: "World Atlas 2026 Edition", price: 55.00, img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Comprehensive maps and geographical data for social studies." },
-            { id: 12, name: "Stainless Steel Water Bottle", price: 18.00, img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=500&q=80", badge: "Eco-Friendly", desc: "Keeps drinks cold for 24 hours. Stay hydrated on campus." },
-            { id: 13, name: "Graphing Calculator Pro", price: 74.99, img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80", badge: "Featured", desc: "Advanced scientific and graphing functions for math and engineering courses." },
-            { id: 14, name: "Academic Planner Notebook", price: 14.99, img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "Weekly and monthly layouts designed to organize study schedules and deadlines." },
-            { id: 15, name: "Noise-Cancelling Earbuds", price: 39.99, img: "https://images.unsplash.com/photo-1512499617640-c2f999017d24?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Comfortable earbuds with quiet mode for focused library or study sessions." },
-            { id: 16, name: "Portable Laptop Stand", price: 24.99, img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "Adjustable stand to improve posture while studying or working on assignments." },
-            { id: 17, name: "Smart Desk Timer", price: 12.99, img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Digital timer for Pomodoro sessions and better study focus." }
+            {
+                id: 1,
+                name: "Premium Hardcover Notebook",
+                price: 12.50,
+                img: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80",
+                badge: "New",
+                desc: "High-quality 120gsm paper, perfect for journaling and note-taking."
+            },
+            {
+                id: 2,
+                name: "Ergonomic Student Backpack",
+                price: 45.00,
+                img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80",
+                badge: "Best Seller",
+                desc: "Water-resistant material with multiple compartments for laptops and books."
+            },
+            {
+                id: 3,
+                name: "Professional Drawing Set",
+                price: 29.99,
+                img: "https://images.unsplash.com/photo-1452860606245-08befc0ff44b?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Complete set of 24 graphite pencils and charcoal for art students."
+            },
+            {
+                id: 4,
+                name: "Calculus: Early Transcendentals",
+                price: 85.00,
+                img: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=600&q=80",
+                badge: "Best Seller",
+                desc: "The definitive guide for engineering and math students."
+            },
+            {
+                id: 5,
+                name: "Mechanical Pencil Set (0.5mm)",
+                price: 8.50,
+                img: "https://images.unsplash.com/photo-1583845112203-29329902332e?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Precision writing tools with comfortable grip and extra lead."
+            },
+           
+            {
+                id: 7,
+                name: "Highlighter Pastel Pack",
+                price: 6.99,
+                img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?auto=format&fit=crop&w=600&q=80",
+                badge: "New",
+                desc: "6 soft pastel colors that don't bleed through paper."
+            },
+            {
+                id: 8,
+                name: "Wireless Silent Mouse",
+                price: 19.50,
+                img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Compact and quiet, ideal for library study sessions."
+            },
+            {
+                id: 9,
+                name: "Sticky Note Mega Bundle",
+                price: 10.00,
+                img: "https://images.unsplash.com/photo-1586282391129-76a6df230234?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Various sizes and colors to keep your reminders organized."
+            },
+            {
+                id: 10,
+                name: "Desktop Organizer Lamp",
+                price: 32.00,
+                img: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=600&q=80",
+                badge: "New",
+                desc: "LED lamp with built-in pen holder and USB charging port."
+            },
+            {
+                id: 11,
+                name: "World Atlas 2026 Edition",
+                price: 55.00,
+                img: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Comprehensive maps and geographical data for social studies."
+            },
+            {
+                id: 12,
+                name: "Stainless Steel Water Bottle",
+                price: 18.00,
+                img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=600&q=80",
+                badge: "Eco-Friendly",
+                desc: "Keeps drinks cold for 24 hours. Stay hydrated on campus."
+            },
+            {
+                id: 13,
+                name: "Graphing Calculator Pro",
+                price: 74.99,
+                img: "https://images.unsplash.com/photo-1564939558297-fc396f18e5c7?auto=format&fit=crop&w=600&q=80",
+                badge: "Best Seller",
+                desc: "Advanced scientific and graphing functions for math and engineering courses."
+            },
+            {
+                id: 14,
+                name: "Academic Planner Notebook",
+                price: 14.99,
+                img: "https://images.unsplash.com/photo-1506784365847-bbad939e9335?auto=format&fit=crop&w=600&q=80",
+                badge: "New",
+                desc: "Weekly and monthly layouts designed to organize study schedules and deadlines."
+            },
+            {
+                id: 15,
+                name: "Noise-Cancelling Earbuds",
+                price: 39.99,
+                img: "https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Comfortable earbuds with quiet mode for focused library or study sessions."
+            },
+            {
+                id: 16,
+                name: "Portable Laptop Stand",
+                price: 24.99,
+                img: "https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=600&q=80",
+                badge: "Best Seller",
+                desc: "Adjustable stand to improve posture while studying or working on assignments."
+            },
+            {
+                id: 17,
+                name: "Smart Desk Timer",
+                price: 12.99,
+                img: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=600&q=80",
+                badge: "",
+                desc: "Digital timer for Pomodoro sessions and better study focus."
+            }
         ];
 
         let currentProduct = null;
         let cartCount = 0;
 
-        // Render Products
         function renderProducts(filteredList = products) {
             const grid = document.getElementById('product-grid');
             const noResults = document.getElementById('noResults');
@@ -1571,13 +1234,13 @@
 
             noResults.style.display = 'none';
             grid.innerHTML = filteredList.map((p, index) => `
-                <div class="col-12 col-sm-12 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.05}s">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.05}s">
                     <div class="product-card" onclick="viewDetails(${p.id})">
                         <div class="product-img-container">
                             ${p.badge ? `<div class="badge-container">${getBadgeHTML(p.badge)}</div>` : ''}
-                            <img src="${p.img}" class="product-img" alt="${p.name}">
+                            <img src="${p.img}" class="product-img" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80'">
                             <div class="quick-add-overlay">
-                                <button class="btn btn-light btn-sm rounded-pill px-3 fw-600" style="font-weight:600;font-size:.8rem;" onclick="viewDetails(${p.id}); event.stopPropagation();">
+                                <button class="btn btn-light btn-sm rounded-pill px-3" style="font-weight:600;font-size:.8rem;" onclick="viewDetails(${p.id}); event.stopPropagation();">
                                     <i class="fas fa-eye me-1"></i> Quick View
                                 </button>
                             </div>
@@ -1605,31 +1268,19 @@
             return '';
         }
 
-        // Search Functionality
         function filterProducts(query) {
             const filtered = products.filter(p =>
                 p.name.toLowerCase().includes(query.toLowerCase()) ||
                 p.desc.toLowerCase().includes(query.toLowerCase())
             );
             renderProducts(filtered);
-
-            if (query.length > 0 && document.activeElement.id === 'heroSearchInput') {
-                document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function syncSearch(val) {
-            document.getElementById('navSearchInput').value = val;
-            filterProducts(val);
         }
 
         function clearSearch() {
             document.getElementById('navSearchInput').value = '';
-            document.getElementById('heroSearchInput').value = '';
             renderProducts(products);
         }
 
-        // View Details
         function viewDetails(id) {
             currentProduct = products.find(p => p.id === id);
             document.getElementById('modalProductName').innerText = currentProduct.name;
@@ -1663,28 +1314,6 @@
             document.getElementById('cart-count').innerText = cartCount;
         }
 
-        // Hero carousel data and actions
-        const heroSlides = [
-            "https://i.pinimg.com/736x/a8/48/1f/a8481ff4c629ecc8af86b01fccbda2bf.jpg",
-            "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-            "https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?auto=format&fit=crop&w=1200&q=80"
-        ];
-        let currentHeroIndex = 0;
-
-        function updateHeroSlide(index) {
-            currentHeroIndex = (index + heroSlides.length) % heroSlides.length;
-            document.getElementById('heroSlideImg').src = heroSlides[currentHeroIndex];
-            document.getElementById('heroSlideCount').innerText = `${currentHeroIndex + 1}/${heroSlides.length}`;
-        }
-
-        function prevHeroSlide() {
-            updateHeroSlide(currentHeroIndex - 1);
-        }
-
-        function nextHeroSlide() {
-            updateHeroSlide(currentHeroIndex + 1);
-        }
-
         // Category pill active state
         document.querySelectorAll('.category-pill').forEach(pill => {
             pill.addEventListener('click', function () {
@@ -1695,9 +1324,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             renderProducts();
-            updateHeroSlide(0);
         });
     </script>
 </body>
-
 </html>
