@@ -4,29 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Shop | Premium Books & Stationery</title>
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts: Poppins & Playfair Display -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- Font Awesome for Icons -->
+    <title>Student Shop | Premium Navbar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css for animations -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 
     <style>
+        /* --- 1. BASIC SETTINGS --- */
         :root {
-            --primary-blue: #2563eb;
-            --secondary-blue: #1e40af;
-            --accent-purple: #7c3aed;
-            --light-gray: #f8fafc;
-            --dark-gray: #1e293b;
-            --text-muted: #64748b;
-            --premium-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            --transition-speed: 0.35s;
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #7c3aed;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --text-gray: #64748b;
+            --white: #ffffff;
+            --border: #e2e8f0;
         }
 
         * {
@@ -41,556 +34,362 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--dark-gray);
-            background-color: #fff;
-            overflow-x: hidden;
+            color: var(--dark);
+            background-color: var(--white);
             line-height: 1.6;
         }
 
-        /* Navbar */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- 2. NAVIGATION BAR --- */
         .navbar {
-            background: rgba(255, 255, 255, 0.97);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-            padding: 1.2rem 0;
+            background: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
             top: 0;
-            z-index: 999;
+            z-index: 1000;
+            height: 80px;
         }
 
-        .navbar-brand {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-family: 'Playfair Display', serif;
-            font-weight: 800;
             font-size: 1.8rem;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.5px;
+            font-weight: 800;
+            color: var(--primary);
+            flex-shrink: 0;
         }
 
-        .navbar-brand i {
-            -webkit-text-fill-color: var(--primary-blue);
+        .logo i {
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 10px 0;
         }
 
         .nav-link {
             font-weight: 500;
-            margin: 0 12px;
-            transition: all var(--transition-speed);
-            color: var(--text-muted) !important;
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--accent-purple));
-            transition: width var(--transition-speed);
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-link:hover {
-            color: var(--primary-blue) !important;
+            color: var(--primary);
         }
 
-        .nav-link:hover::after {
-            width: 100%;
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            min-width: 180px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: 0.3s;
         }
 
-        /* Search Bar in Navbar */
-        .nav-search {
-            position: relative;
-            max-width: 250px;
-            margin-right: 20px;
+        .nav-item:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        .nav-search input {
-            border-radius: 50px;
-            padding: 8px 20px 8px 40px;
-            border: 2px solid #e2e8f0;
+        .dropdown-item {
+            padding: 10px 20px;
+            display: block;
+            color: var(--text-gray);
             font-size: 0.9rem;
-            transition: all var(--transition-speed);
+            transition: 0.2s;
+        }
+
+        .dropdown-item:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .search-container {
+            position: relative;
+            width: 250px;
+        }
+
+        .search-container input {
             width: 100%;
-        }
-
-        .nav-search input:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            padding: 10px 15px 10px 40px;
+            border-radius: 50px;
+            border: 1px solid var(--border);
+            font-family: inherit;
+            font-size: 0.9rem;
             outline: none;
-            width: 300px;
+            transition: 0.3s;
         }
 
-        .nav-search i {
+        .search-container input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .search-container i {
             position: absolute;
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: var(--text-gray);
         }
 
-        /* Cart Icon */
-        .cart-icon-wrapper {
+        .cart-wrapper {
             position: relative;
+            font-size: 1.4rem;
+            color: var(--dark);
             cursor: pointer;
-            font-size: 1.3rem;
-            color: var(--dark-gray);
-            transition: all var(--transition-speed);
+            transition: 0.3s;
         }
 
-        .cart-icon-wrapper:hover {
-            color: var(--primary-blue);
-            transform: scale(1.15);
+        .cart-wrapper:hover {
+            color: var(--primary);
         }
 
-        /* Enhanced Card Styling */
-        .card-item .card {
-            border: none;
-            border-radius: 20px;
-            background: #ffffff;
-            box-shadow: var(--card-shadow);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            height: 100%;
-            overflow: hidden;
+        /* BANNER */
+        .carousel-item {
+    transition: transform 1.2s ease-in-out;
+}
+
+.carousel-item img {
+    height: 60vh;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .carousel-item img { height: 500px; }
+}
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption {
+    bottom: 20%;
+    z-index: 2;
+}
+
+.carousel-caption h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.carousel-caption p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ef4444;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
         }
 
-        /* Image Hover Effect */
-        .card-item .card-img-top {
-            height: 220px;
-            object-fit: cover;
+        .profile-wrapper {
+            position: relative;
+            font-size: 1.8rem;
+            color: #d1d5db;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .profile-wrapper:hover {
+            color: var(--primary);
+        }
+
+        .profile-status {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 10px;
+            height: 10px;
+            background: #ef4444;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+        
+        /* --- 3. HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+            padding: 80px 5%;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        /* --- 4. PRODUCT GRID --- */
+        .container {
+            padding: 60px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
             border-radius: 15px;
-            transition: transform 0.5s ease;
-        }
-
-        .card-item .card:hover {
-            transform: translateY(-12px);
-            box-shadow: var(--premium-shadow);
-        }
-
-        .card-item .card:hover .card-img-top {
-            transform: scale(1.08);
-        }
-
-        /* Content Layout */
-        .card-item .card-body {
-            padding: 1.5rem !important;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border: 1px solid #eee;
             display: flex;
             flex-direction: column;
         }
 
-        .card-item .card-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--dark-gray);
-            margin-bottom: 0.75rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .card-item .card-body p:not(.card-title) {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            height: 4.5em;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Pricing and Button Row */
-        .card-item .add {
-            margin-top: auto;
-            align-items: center;
-        }
-
-        .card-item .add p {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--primary-blue);
-            margin: 0 !important;
-        }
-
-        .card-item .btn-primary {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            border: none;
-            border-radius: 50px;
-            padding: 8px 25px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .card-item .btn-primary:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-            background: var(--secondary-blue);
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -10px;
-            right: -10px;
-            background: linear-gradient(135deg, #ef4444, #dc2626);
-            color: #fff;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-        }
-
-        /* NEW BANNER SECTION */
-        .banner-section {
-            padding: 60px 0;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 50%, #fef3c7 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-slider-container {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto 50px;
-            background: #fff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--premium-shadow);
-        }
-
-        .banner-slider {
-            width: 100%;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
-            position: relative;
-        }
-
-        .banner-slide {
-            width: 100%;
-            height: 100%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.6s ease;
-        }
-
-        .banner-slide.active {
-            display: flex;
-            opacity: 1;
-        }
-
-        .banner-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Banner Navigation Arrows */
-        .banner-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .banner-arrow:hover {
-            background: rgba(255, 255, 255, 1);
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .banner-arrow.prev {
-            left: 20px;
-        }
-
-        .banner-arrow.next {
-            right: 20px;
-        }
-
-        /* Banner Text Section */
-        .banner-text-section {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .banner-main-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .banner-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-weight: 400;
-        }
-
-        /* Products Section */
-        #products {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
-        }
-
-        /* Product Cards */
-        .product-card {
-            border: none;
-            border-radius: 25px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: var(--card-shadow);
-            transition: all var(--transition-speed);
-            height: 100%;
-            position: relative;
-            cursor: pointer;
-        }
-
         .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--premium-shadow);
-        }
-
-        .product-img-container {
-            height: 280px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .product-img {
             width: 100%;
-            height: 100%;
+            height: 200px;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.15) rotate(2deg);
-        }
-
-        .badge-container {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            z-index: 10;
-        }
-
-        .badge-new {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            display: inline-block;
-        }
-
-        .badge-best {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
-            display: inline-block;
-        }
-
-        .badge-eco {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            display: inline-block;
         }
 
         .product-info {
-            padding: 25px;
-            background: #fff;
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .product-name {
-            font-weight: 600;
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-            color: var(--dark-gray);
-            line-height: 1.4;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 10px;
         }
 
-        .product-price {
-            color: var(--primary-blue);
-            font-weight: 800;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-
-        .product-rating {
-            color: #fbbf24;
+        .product-desc {
             font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .btn-view {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            border: none;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all var(--transition-speed);
-            width: 100%;
-        }
-
-        .btn-view:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-            color: #ffffff;
-        }
-
-        /* Modal Styling */
-        .modal-content {
-            border-radius: 30px;
-            border: none;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+            height: 40px;
             overflow: hidden;
-            box-shadow: var(--premium-shadow);
         }
 
-        .modal-header {
-            border-bottom: 1px solid #e2e8f0;
-            padding: 30px;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
-        }
-
-        .modal-title {
-            font-family: 'Playfair Display', serif;
-            font-weight: 800;
-            font-size: 1.8rem;
-        }
-
-        .modal-body {
-            padding: 40px;
-        }
-
-        .qr-container {
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
-            padding: 40px;
-            border-radius: 25px;
-            text-align: center;
-            border: 2px dashed var(--primary-blue);
-        }
-
-        .login {
-            margin-right: 40px;
-            border-radius: 30px;
-        }
-
-        /* Google/YouTube Style Account Button */
-        .google-style-account {
-            width: 45px;
-            height: 45px;
+        .product-bottom {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: background-color 0.2s ease;
-            text-decoration: none;
-            position: relative;
-            margin-right: 40px;
+            margin-top: auto;
         }
 
-        .google-style-account img {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid #e2e8f0;
+        .price {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.2rem;
         }
 
-        .google-style-account:hover {
-            background-color: rgba(60, 64, 67, 0.1);
-        }
-
-        .google-style-account:active {
-            background-color: rgba(60, 64, 67, 0.2);
-        }
-
-        .google-style-account::after {
-            content: '';
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            width: 10px;
-            height: 10px;
-            background-color: #ef4444;
-            border: 2px solid #fff;
-            border-radius: 50%;
-            display: block;
-        }
-
-
-        .btn-shop {
-            padding: 14px 40px;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all var(--transition-speed);
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+        .add-btn {
+            background: var(--primary);
+            color: var(--white);
             border: none;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            color: #ffffff !important;
-            text-decoration: none;
-            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
         }
 
-        .btn-shop:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        .add-btn:hover {
+            background: var(--secondary);
         }
 
         /* Footer */
@@ -626,665 +425,249 @@
             background: rgba(37, 99, 235, 0.2);
             transform: translateY(-5px);
         }
-
-        /* Success Message */
-        .success-icon {
-            font-size: 5rem;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* No Results Message */
-        .no-results {
-            text-align: center;
-            padding: 50px 0;
-            display: none;
-        }
-
-        .no-results i {
-            font-size: 4rem;
-            color: #e2e8f0;
-            margin-bottom: 20px;
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .nav-search {
-                max-width: 100%;
-                margin: 15px 0;
-            }
-
-            .nav-search input:focus {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .banner-main-title {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .banner-slider {
-                height: 250px;
-            }
-
-            .banner-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #f1f5f9;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
-            border-radius: 10px;
-        }
-
-        .dropdown-menu {
-            border: none;
-            border-radius: 15px;
-            box-shadow: var(--premium-shadow);
-            padding: 10px;
-            animation: fadeInDown 0.25s ease;
-        }
-
-        .dropdown-item {
-            border-radius: 10px;
-            padding: 10px 16px;
-            font-weight: 500;
-            color: var(--text-muted);
-            transition: all 0.2s ease;
-        }
-
-        .dropdown-item:hover {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
-            color: var(--primary-blue);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* NEW BANNER SECTION */
-        h1,
-        p {
-            color: black;
-
-        }
-
-        /* Sets the transition speed between slides */
-        .carousel-item {
-            transition: transform 1.2s ease-in-out;
-            /* Smooth sliding duration */
-        }
-
-        /* Ensure the banner is full-width and images maintain aspect ratio */
-        .carousel-item img {
-            height: 60vh;
-            /* Default height for mobile */
-            object-fit: cover;
-        }
-
-        /* Responsive height for larger screens */
-        @media (min-width: 768px) {
-            .carousel-item img {
-                height: 500px;
-                /* Fixed height for desktop */
-            }
-        }
-
-        /* Optional: Adding a dark overlay so text is easier to read */
-        .carousel-item::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        /* Styling the caption for better mobile visibility */
-        .carousel-caption {
-            bottom: 20%;
-            z-index: 2;
-        }
-
-        .carousel-caption h1 {
-            font-weight: 700;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* detail */
-        .hero-container {
-            margin-top: -5vh;
-            /* Adjust based on your banner height */
-            display: flex;
-            justify-content: center;
-            /* Centers horizontally */
-            align-items: center;
-            /* Centers vertically */
-            text-align: center;
-            /* Centers text lines */
-        }
-
-        .hero-caption {
-            max-width: 800px;
-            /* Prevents text from stretching too wide on desktop */
-            width: 100%;
-            padding: 20px;
-        }
-
-        .hero-note {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            /* margin-bottom: 10px; */
-            color: #ffd700;
-            /* Example accent color */
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        /* Button spacing and responsiveness */
-        .hero-actions {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-            /* Stack buttons on very small screens */
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-container {
-                min-height: 400px;
-            }
-
-            .hero-subtitle {
-                font-size: 1rem;
-                /* Smaller text for mobile */
-            }
-
-            .btn-shop,
-            .btn-shop-outline {
-                width: 100%;
-                /* Full width buttons on mobile */
-                max-width: 300px;
-            }
-        }
-
-        /* Fix for form-select with rounded-pill class */
-        .form-select.rounded-pill {
-            border-radius: 50px !important;
-            padding: 0.75rem 2rem 0.75rem 1.2rem !important;
-            height: auto;
-            min-height: 44px;
-            border: 1.5px solid #e2e8f0;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
-            background-position: right 1rem center;
-            background-size: 18px;
-            background-repeat: no-repeat;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-        }
-
-        .form-select.rounded-pill:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        .form-select.rounded-pill:disabled {
-            background-color: #f1f5f9;
-            opacity: 0.6;
-        }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand" href="#home"><i class="fas fa-book-open me-2"></i>Student Shop</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                            <li><a class="dropdown-item" href="TextBook.html" onclick="filterProducts('book')">Book</a></li>
-        
-                            <li><a class="dropdown-item" href="Pencils_Products.html" onclick="filterProducts('pencil')">Pencil</a></li>
-                            <li><a class="dropdown-item" href="ToyKides_Products.html" onclick="filterProducts('toy')">Toy</a></li>
-                            <li><a class="dropdown-item" href="Pens_Products.html" onclick="filterProducts('note')">Pens</a></li>
-                            <li><a class="dropdown-item" href="Navbar.html" onclick="filterProducts('')">All Products</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Categories
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                            <li><a class="dropdown-item" href="#">Books & Textbooks</a></li>
-                            <li><a class="dropdown-item" href="#">Stationery</a></li>
-                            <li><a class="dropdown-item" href="#">Backpacks & Bags</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">All Categories</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="nav-search">
-                            <i class="fas fa-search"></i>
-                            <input type="text" id="navSearchInput" placeholder="Search products..."
-                                onkeyup="filterProducts(this.value)">
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <div class="cart-icon-wrapper" data-bs-toggle="modal" data-bs-target="#cartModal">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-badge" id="cart-count">0</span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <span>MOON SHOP</span>
         </div>
-        <div class="ms-lg-4 d-flex align-items-center">
-            <a href="login.html" class="google-style-account" title="Google Account">
-                <img src="https://i.pinimg.com/736x/8a/e9/e9/8ae9e92fa4e69967aa61bf2bda967b7b.jpg" alt="User Avatar">
-            </a>
+
+        <ul class="nav-links">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+            
+            <li class="nav-item">
+                <a class="nav-link">Products <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="TextBook.html" class="dropdown-item">Books</a></li>
+                    <li><a href="Pencils_Products.html" class="dropdown-item">Pencils</a></li>
+                    <li><a href="Toys_Products.html" class="dropdown-item">Toys</a></li>
+                    <li><a href="Pens_Products.html" class="dropdown-item">Pens</a></li>
+                     <li><a href="Navbar.html" class="dropdown-item">All Products</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="#" class="nav-link">Categories <i class="fas fa-chevron-down" style="font-size: 0.6rem;"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Stationery</a></li>
+                    <li><a href="#" class="dropdown-item">Backpacks</a></li>
+                    <li><a href="#" class="dropdown-item">Accessories</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-right">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search products...">
+            </div>
+            <div class="cart-wrapper">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">0</span>
+            </div>
+            <a href="Login.html" class="login-link">Login</a>
+            <div class="profile-wrapper">
+                <i class="fas fa-user-circle"></i>
+                <span class="profile-status"></span>
+            </div>
         </div>
     </nav>
 
-    <!-- NEW BANNER SECTION -->
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
-        </div>
-
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="https://i.pinimg.com/736x/ba/af/fa/baaffae3e5b1f74a1d3f5e20c92c120c.jpg" class="d-block w-100"
-                    alt="Student Shop 1">
-                <div class="carousel-caption">
-                    <h1>WELCOME TO MY STUDENTS SHOP</h1>
-                    <p>A premium student store experience designed for easy browsing and smart shopping.</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://i.pinimg.com/1200x/a1/88/0a/a1880aa0f361dae8cb9a047b17a477ef.jpg"
-                    class="d-block w-100" alt="Student Shop 2">
-                <div class="carousel-caption">
-                    <h1>QUALITY GEAR</h1>
-                    <p>Fast access to study essentials and smart tools for your education.</p>
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <img src="https://i.pinimg.com/1200x/61/7f/88/617f8880b4e3aa09002d9abd41dc3a93.jpg"
-                    class="d-block w-100" alt="Student Shop 3">
-                <div class="carousel-caption">
-                    <h1>STUDY SMART</h1>
-                    <p>The spacing is now balanced. Your one-stop shop for student life.</p>
-                </div>
-            </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+    <!-- BANNER / CAROUSEL -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <!-- Banner Text -->
-    <div class="banner-text-section animate__animated animate__fadeInUp">
-        <h1 class="banner-main-title">All MY PRODUCTS</h1>
-        <!-- <p class="banner-subtitle">The spacing is now balanced.A premium student store experience designed for easy -->
-            <!-- browsing, smart shopping, and fast access to study essentials.</p> -->
-        <div class="hero-actions">
-            </p>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://i.pinimg.com/736x/ba/af/fa/baaffae3e5b1f74a1d3f5e20c92c120c.jpg" class="d-block w-100" alt="Student Shop 1">
+            <div class="carousel-caption">
+                <h1>WELCOME TO MY STUDENTS SHOP</h1>
+                <p>A premium student store experience designed for easy browsing and smart shopping.</p>
+            </div>
         </div>
-    </div>
-    <!-- Detail -->
-    <div class="container hero-container">
-        <div class="hero-caption animate__animated animate__fadeInUp" style="animation-delay: 0.15s;">
-            <p class="hero-subtitle">A premium student store experience designed for easy browsing, smart shopping, and
-                fast access to study essentials.</p>
-            <div class="hero-actions">
-                <a href="#products" class="btn-shop"><i class="fas fa-shopping-bag me-2"></i>Explore Products</a>
-                <a href="#categories" class="btn-shop-outline"><i class="fas fa-th-large me-2"></i>All Categories</a>
+        <div class="carousel-item">
+            <img src="https://i.pinimg.com/1200x/a1/88/0a/a1880aa0f361dae8cb9a047b17a477ef.jpg" class="d-block w-100" alt="Student Shop 2">
+            <div class="carousel-caption">
+                <h1>QUALITY GEAR</h1>
+                <p>Fast access to study essentials and smart tools for your education.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://i.pinimg.com/1200x/61/7f/88/617f8880b4e3aa09002d9abd41dc3a93.jpg" class="d-block w-100" alt="Student Shop 3">
+            <div class="carousel-caption">
+                <h1>STUDY SMART</h1>
+                <p>Your one-stop shop for student life.</p>
             </div>
         </div>
     </div>
-    </section>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
 
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Welcome to Student Shop</h1>
+        <p>Your premium destination for high-quality books, stationery, and student essentials. Designed for the modern learner.</p>
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+    </header>
 
-    <!-- Card Items Section -->
-    <div class="container-fluif mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 " style="width: outo;">
-                            <img src="https://i.pinimg.com/1200x/94/82/31/9482311d4dad2c49ebfa1a377ca2c920.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Backpack</h5>
-                                <p> designed for your daily campus life. It makes it easy to carry your textbooks</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>6.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <!-- Products Section -->
+    <main class="container" id="products">
+        <h2 class="section-title">Our Products</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/f8/4f/4d/f84f4d084669c707f2bdfb95f54b47c1.jpg" alt="Pink Book" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Pink Book</h3>
+                    <p class="product-desc">A stylish and durable notebook for your daily notes.</p>
+                    <div class="product-bottom">
+                        <span class="price">$5.25</span>
+                        <button class="add-btn">ADD</button>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 " style="width: outo;">
-                            <img src="https://i.pinimg.com/1200x/52/7b/11/527b110c966bcb54a018a13c336efd12.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Color-Pop Stationery Pouch</h5>
-                                <p>Slim, stylish, and perfect for students on the go. Fits easily into any backpack
-                                    while keeping your essentials secure.</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 " style="width: outo;">
-                            <img src="https://i.pinimg.com/1200x/ba/06/e7/ba06e7de6fd8d5b905af75e7d30d8644.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Sticky Notes</h5>
-                                <p>A gentle touch for your workspace. These high-quality adhesive notes offer a smooth
-                                    writing surface and a variety of soothing colors to brighten your daily planning.
-                                </p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 " style="width: outo;">
-                            <img src="https://i.pinimg.com/736x/e9/ee/cc/e9eeccdd9a8f5321e110fc8f496b8484.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
-                                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with
-                                    anti-dry-out technology, they are perfect for long study sessions and beautiful
-                                    note-taking.</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 mt-3" style="width: outo;">
-                            <img src="https://i.pinimg.com/1200x/f4/5b/f4/f45bf4a055a9c1fe91a84de9118b6724.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Stabilo Boss Pastel Highlighters</h5>
-                                <p>The world's most iconic highlighters in a soft, trendy pastel palette. Designed with
-                                    anti-dry-out technology, they are perfect for long study sessions and beautiful
-                                    note-taking.</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div
-                >
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 mt-3" style="width: outo;">
-                            <img src="https://i.pinimg.com/736x/a1/59/db/a159db5ab3c020b440d7333245ab0c94.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Minimalist & Clean</h5>
-                                <p>Keep your desk clutter-free with these durable metal mesh holders. The ventilated
-                                    design makes it easy to see and access all your pens and highlighters.</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 mt-3" style="width: outo;">
-                            <img src="https://i.pinimg.com/736x/b3/96/e3/b396e3cad0198e3af52664e1180f34ce.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Premium Pink Paper Clips (100 Pack)</h5>
-                                <p>Keep your assignments and reports perfectly organized with this bulk pack of 100
-                                    vinyl-coated paper clips. Durable, rust-resistant, and won't snag your important
-                                    documents.</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 ">
-                    <div class="card-item">
-                        <div class="card p-2 mt-3" style="width: outo;">
-                            <img src="https://i.pinimg.com/736x/8a/c6/2e/8ac62ed1f10ce6d0d0fe49db8c5557ed.jpg"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Jumbo Chisel-Tip Permanent Markers</h5>
-                                <p>Make your mark with confidence. These high-capacity markers feature a versatile
-                                    chisel tip for both broad strokes and fine lines. Perfect for project boards,
-                                    signage, and bold labeling.</p>
-                                <div class="add d-flex justify-content-between">
-                                    <p>0.25$ </p>
-                                    <div>
-                                        <a href="#" class="btn btn-primary ​">ADD</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-        </div>
-    </div>
-
-    <!-- Product Details Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="modalProductName">Product Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/23/d6/6f/23d66f86d8882f7fb23c0a6ae5698432.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">FABER CASTELL - TEXTLINER</h3>
+                    <p class="product-desc">High-quality 120 pages notebook for study purposes.</p>
+                    <div class="product-bottom">
+                        <span class="price">$4.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img id="modalProductImg"
-                                src="https://i.pinimg.com/736x/00/8c/54/008c54c0c3280aba16e4537d619eed6a.jpg"
-                                class="img-fluid rounded-4 shadow-lg mb-3" alt="Product">
-                        </div>
-                        <div class="col-md-6">
-                            <h3 id="modalProductTitle" class="fw-bold mb-2"></h3>
-                            <div class="product-rating mb-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2 text-muted">(128 reviews)</span>
-                            </div>
-                            <p id="modalProductPrice" class="product-price mb-3"></p>
-                            <p id="modalProductDesc" class="text-muted mb-4"></p>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Edition</label>
-                                <select class="form-select rounded-pill">
-                                    <option selected>Standard Edition</option>
-                                    <option>Premium Pack</option>
-                                    <option>Student Bundle</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">Quantity</label>
-                                <div class="input-group" style="width: 140px;">
-                                    <button class="btn btn-outline-secondary rounded-start-pill" type="button"
-                                        onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
-                                    <input type="text" id="productQty" class="form-control text-center" value="1"
-                                        readonly>
-                                    <button class="btn btn-outline-secondary rounded-end-pill" type="button"
-                                        onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-
-                            <button class="btn btn-shop w-100 py-3" onclick="showPayment()"><i
-                                    class="fas fa-credit-card me-2"></i>Buy Now</button>
-                        </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/4b/c7/26/4bc726a7836235194ca6130425ff4c61.jpg" alt="Educational Book" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">note</h3>
+                    <p class="product-desc">Premium notebook with a strong cover and smooth pages.</p>
+                    <div class="product-bottom">
+                        <span class="price">$5.99</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/64/a5/33/64a53348ac53b14e29be2da4b24b4340.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Study Notebook</h3>
+                    <p class="product-desc">Simple and high-quality notebook for everyday use.</p>
+                    <div class="product-bottom">
+                        <span class="price">$3.99</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/f3/b2/ff/f3b2ffeaee10b54bfcf8c5d6c9fe7edd.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Paper clip </h3>
+                    <p class="product-desc">Essential reading material for your academic success.</p>
+                    <div class="product-bottom">
+                        <span class="price">$2.78</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/74/34/1d/74341d0b0b07f1e5fdbf03d1142197d9.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">pins</h3>
+                    <p class="product-desc">A stylish and durable textbook for students.</p>
+                    <div class="product-bottom">
+                        <span class="price">$4.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/b0/73/9c/b0739cc3c452f978e3ea1c868964a46c.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">paper</h3>
+                    <p class="product-desc">Comprehensive guide for your daily campus life.</p>
+                    <div class="product-bottom">
+                        <span class="price">$4.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/1200x/ca/1c/2f/ca1c2f5bc486aec6aa1186cb93f93d16.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">pans</h3>
+                    <p class="product-desc">Perfect for research and deep study sessions.</p>
+                    <div class="product-bottom">
+                        <span class="price">$4.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/06/16/e7/0616e7b5d2c64d7539b4e0a48fa6f60c.jpg" alt="Notebook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">chok</h3>
+                    <p class="product-desc">High-quality paper for smooth writing experience.</p>
+                    <div class="product-bottom">
+                        <span class="price">$4.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/ca/ef/80/caef8006de81ef730794df4720314f90.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Standard Textbook</h3>
+                    <p class="product-desc">Reliable and clear content for your courses.</p>
+                    <div class="product-bottom">
+                        <span class="price">$3.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/10/86/b5/1086b5afde71acf5b6d24a8424028bb6.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Essential Book</h3>
+                    <p class="product-desc">A must-have for every student's library.</p>
+                    <div class="product-bottom">
+                        <span class="price">$4.23</span>
+                        <button class="add-btn">ADD</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://i.pinimg.com/736x/68/3e/08/683e0883fcac8316fca13f265a514545.jpg" alt="Textbook" class="product-img">
+                <div class="product-info">
+                    <h3 class="product-name">Advanced Textbook</h3>
+                    <p class="product-desc">Deeper insights for your advanced studies.</p>
+                    <div class="product-bottom">
+                        <span class="price">$6.23</span>
+                        <button class="add-btn">ADD</button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 
-    <!-- Payment Modal -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">Secure Checkout</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="payment-step-1">
-                        <p class="mb-4 text-muted">Scan the QR code below to complete your payment via <strong>KHQR /
-                                ABA Pay</strong>.</p>
-                        <div class="qr-container mb-4">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=StudentShopPayment2026"
-                                class="qr-img" alt="Payment QR">
-                            <p class="text-muted mb-2">Total Amount</p>
-                            <h3 class="payment-total" id="paymentTotal">$0.00</h3>
-                        </div>
-                        <button class="btn btn-shop w-100 py-3" onclick="confirmPayment()"><i
-                                class="fas fa-check me-2"></i>Confirm Payment</button>
-                    </div>
-                    <div id="payment-step-2" class="d-none animate__animated animate__fadeIn py-5">
-                        <i class="fas fa-check-circle success-icon mb-4"></i>
-                        <h2 class="fw-bold mt-3 mb-2">Thank You!</h2>
-                        <p class="text-muted mb-4">Your purchase was successful. We'll notify you once your order is
-                            shipped.</p>
-                        <button class="btn btn-shop mt-4 px-5" data-bs-dismiss="modal"><i
-                                class="fas fa-home me-2"></i>Back to Shop</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold"><i class="fas fa-shopping-cart me-2"></i>Shopping Cart</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center py-5">
-                    <i class="fas fa-inbox" style="font-size: 3rem; color: var(--text-muted);"></i>
-                    <p class="mt-3 text-muted">Your cart is currently empty</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
+   <!-- Footer -->
     <footer id="contact">
         <div class="container">
             <div class="row g-5 mb-5">
@@ -1298,17 +681,18 @@
                     <ul class="list-unstyled">
                         <li class="mb-3"><i class="fas fa-map-marker-alt me-3 text-primary"></i>123 Education Street,
                             Phnom Penh, Cambodia</li>
-                        <li class="mb-3"><i class="fas fa-phone me-3 text-primary"></i>+855 (12) 345-678</li>
-                        <li class="mb-3"><i class="fas fa-envelope me-3 text-primary"></i>hello@studentshop.com</li>
+                        <li class="mb-3"><i class="fas fa-phone me-3 text-primary"></i>+855 97 2599127</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-3 text-primary"></i>kkhea933@gmail.com</li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
                     <h5 class="mb-4">Follow Us</h5>
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/share/1EAtcJyCNx/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/studentshop?igshid=OGQ5ZDUyOWE="><i class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com/StudentShop"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/student-shop"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/share/1HrrPG6CqU/?mibextid=wwXIfr"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://t.me/Khann_Khea"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.tiktok.com/@khea_khea2"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
             </div>
@@ -1319,153 +703,6 @@
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Banner Slider Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.banner-slide');
-        const totalSlides = slides.length;
-
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[n].classList.add('active');
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Product Data
-        const products = [
-            { id: 1, name: "Premium Hardcover Notebook", price: 12.50, img: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "High-quality 120gsm paper, perfect for journaling and note-taking." },
-            { id: 2, name: "Ergonomic Student Backpack", price: 45.00, img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "Water-resistant material with multiple compartments for laptops and books." },
-            { id: 3, name: "Professional Drawing Set", price: 29.99, img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Complete set of 24 graphite pencils and charcoal for art students." },
-            { id: 4, name: "Calculus: Early Transcendentals", price: 85.00, img: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "The definitive guide for engineering and math students." },
-            { id: 5, name: "Mechanical Pencil Set (0.5mm)", price: 8.50, img: "https://images.unsplash.com/photo-1585336139118-132f7f215b2e?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Precision writing tools with comfortable grip and extra lead." },
-            { id: 6, name: "A4 Refillable Binder", price: 15.00, img: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Durable binder with 4 rings, perfect for organizing lecture notes." },
-            { id: 7, name: "Highlighter Pastel Pack", price: 6.99, img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "6 soft pastel colors that don't bleed through paper." },
-            { id: 8, name: "Wireless Silent Mouse", price: 19.50, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Compact and quiet, ideal for library study sessions." },
-            { id: 9, name: "Sticky Note Mega Bundle", price: 10.00, img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Various sizes and colors to keep your reminders organized." },
-            { id: 10, name: "Desktop Organizer Lamp", price: 32.00, img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "LED lamp with built-in pen holder and USB charging port." },
-            { id: 11, name: "World Atlas 2026 Edition", price: 55.00, img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Comprehensive maps and geographical data for social studies." },
-            { id: 12, name: "High-Capacity Power Bank", price: 42.00, img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "Never run out of battery during long library sessions." }
-        ];
-
-        let currentProduct = null;
-        let cartCount = 0;
-
-        // Render Products
-        function renderProducts(filteredList = products) {
-            const grid = document.getElementById('product-grid');
-            const noResults = document.getElementById('noResults');
-
-            if (filteredList.length === 0) {
-                grid.innerHTML = '';
-                noResults.style.display = 'block';
-                return;
-            }
-
-            noResults.style.display = 'none';
-            grid.innerHTML = filteredList.map((p, index) => `
-                <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.05}s">
-                    <div class="product-card" onclick="viewDetails(${p.id})">
-                        <div class="product-img-container">
-                            ${p.badge ? `<div class="badge-container">${getBadgeHTML(p.badge)}</div>` : ''}
-                            <img src="${p.img}" class="product-img" alt="${p.name}">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-name">${p.name}</h5>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">$${p.price.toFixed(2)}</span>
-                            </div>
-                            <button class="btn btn-view mt-3" onclick="viewDetails(${p.id}); event.stopPropagation();">View Details</button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function getBadgeHTML(badge) {
-            if (badge === 'New') return '<span class="badge-new">New</span>';
-            if (badge === 'Best Seller') return '<span class="badge-best">Best Seller</span>';
-            if (badge === 'Eco-Friendly') return '<span class="badge-eco">Eco-Friendly</span>';
-            return '';
-        }
-
-        // Search Functionality
-        function filterProducts(query) {
-            const filtered = products.filter(p =>
-                p.name.toLowerCase().includes(query.toLowerCase()) ||
-                p.desc.toLowerCase().includes(query.toLowerCase())
-            );
-            renderProducts(filtered);
-
-            const productsSection = document.getElementById('products');
-            if (productsSection) {
-                productsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function syncSearch(val) {
-            document.getElementById('navSearchInput').value = val;
-            filterProducts(val);
-        }
-
-        function clearSearch() {
-            document.getElementById('navSearchInput').value = '';
-            renderProducts(products);
-        }
-
-        // View Details
-        function viewDetails(id) {
-            currentProduct = products.find(p => p.id === id);
-            document.getElementById('modalProductName').innerText = currentProduct.name;
-            document.getElementById('modalProductTitle').innerText = currentProduct.name;
-            document.getElementById('modalProductPrice').innerText = `$${currentProduct.price.toFixed(2)}`;
-            document.getElementById('modalProductDesc').innerText = currentProduct.desc;
-            document.getElementById('modalProductImg').src = currentProduct.img;
-            document.getElementById('productQty').value = 1;
-            new bootstrap.Modal(document.getElementById('productModal')).show();
-        }
-
-        function updateQty(val) {
-            const input = document.getElementById('productQty');
-            let current = parseInt(input.value);
-            if (current + val >= 1) input.value = current + val;
-        }
-
-        function showPayment() {
-            const qty = parseInt(document.getElementById('productQty').value);
-            document.getElementById('paymentTotal').innerText = `$${(currentProduct.price * qty).toFixed(2)}`;
-            bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
-            document.getElementById('payment-step-1').classList.remove('d-none');
-            document.getElementById('payment-step-2').classList.add('d-none');
-            new bootstrap.Modal(document.getElementById('paymentModal')).show();
-        }
-
-        function confirmPayment() {
-            document.getElementById('payment-step-1').classList.add('d-none');
-            document.getElementById('payment-step-2').classList.remove('d-none');
-            cartCount += parseInt(document.getElementById('productQty').value);
-            document.getElementById('cart-count').innerText = cartCount;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => renderProducts());
-    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

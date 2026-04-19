@@ -100,6 +100,41 @@
             width: 100%;
         }
 
+        /* CSS-ONLY DROPDOWN FIX */
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu {
+            display: block;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            box-shadow: var(--premium-shadow);
+            padding: 10px;
+            position: absolute;
+        }
+
+        .dropdown-item {
+            border-radius: 10px;
+            padding: 10px 16px;
+            font-weight: 500;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
+            color: var(--primary-blue);
+        }
+
         /* Search Bar in Navbar */
         .nav-search {
             position: relative;
@@ -341,163 +376,12 @@
             font-weight: 800;
             color: var(--dark-gray);
             margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-
-        .banner-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            font-weight: 400;
-        }
-
-        /* Section Titles */
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--dark-gray);
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 3rem;
-            font-weight: 400;
-        }
-
-        /* Products Section */
-        #products {
-            padding: 100px 0;
-            background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
-        }
-
-        /* Product Cards */
-        .product-card {
-            border: none;
-            border-radius: 25px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: var(--card-shadow);
-            transition: all var(--transition-speed);
-            height: 100%;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .product-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--premium-shadow);
-        }
-
-        .product-img-container {
-            height: 280px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .product-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.15) rotate(2deg);
-        }
-
-        .badge-container {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            z-index: 10;
-        }
-
-        .badge-new {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-            display: inline-block;
-        }
-
-        .badge-best {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
-            display: inline-block;
-        }
-
-        .badge-eco {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: #fff;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            display: inline-block;
-        }
-
-        .product-info {
-            padding: 25px;
-            background: #fff;
-        }
-
-        .product-name {
-            font-weight: 600;
-            font-size: 1.15rem;
-            margin-bottom: 8px;
-            color: var(--dark-gray);
-            line-height: 1.4;
-        }
-
-        .product-price {
-            color: var(--primary-blue);
-            font-weight: 800;
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-
-        .product-rating {
-            color: #fbbf24;
-            font-size: 0.9rem;
-            margin-bottom: 12px;
-        }
-
-        .btn-view {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
-            border: none;
-            color: #000000;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all var(--transition-speed);
-            width: 100%;
-        }
-
-        .btn-view:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-            color: #ffffff;
         }
 
         /* Modal Styling */
         .modal-content {
-            border-radius: 30px;
             border: none;
+            border-radius: 30px;
             overflow: hidden;
             box-shadow: var(--premium-shadow);
         }
@@ -695,39 +579,6 @@
             border-radius: 10px;
         }
 
-        .dropdown-menu {
-            border: none;
-            border-radius: 15px;
-            box-shadow: var(--premium-shadow);
-            padding: 10px;
-            animation: fadeInDown 0.25s ease;
-        }
-
-        .dropdown-item {
-            border-radius: 10px;
-            padding: 10px 16px;
-            font-weight: 500;
-            color: var(--text-muted);
-            transition: all 0.2s ease;
-        }
-
-        .dropdown-item:hover {
-            background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(124, 58, 237, 0.08));
-            color: var(--primary-blue);
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* NEW BANNER SECTION */
         h1,
         p {
@@ -776,6 +627,11 @@
         .carousel-caption h1 {
             font-weight: 700;
             text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+        
+        .carousel-caption p {
+            color: #fff;
         }
 
         /* detail */
@@ -955,7 +811,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid px-4">
-            <a class="navbar-brand" href="#home"><i class="fas fa-book-open me-2"></i>Student Shop</a>
+            <a class="navbar-brand" href="#home"><i class="fas fa-book-open me-2"></i>MOON SHOP</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -966,24 +822,19 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button">
                             Products
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                            <li><a class="dropdown-item" href="TextBook.html" onclick="filterProducts('book')">Book</a>
-                            </li>
-                            <li><a class="dropdown-item" href="Pencils_Products.html"
-                                    onclick="filterProducts('pencil')">Pencil</a></li>
-                            <li><a class="dropdown-item" href="ToyKides_Products.html" onclick="filterProducts('toy')">Toy</a></li>
-                            <li><a class="dropdown-item" href="Pans_products.html" onclick="filterProducts('note')">Pens</a></li>
-                            <li><a class="dropdown-item" href="Navbar.html" onclick="filterProducts('')">All
-                                    Products</a></li>
+                            <li><a class="dropdown-item" href="TextBook.html">Book</a></li>
+                            <li><a class="dropdown-item" href="Pencils_Products.html">Pencil</a></li>
+                            <li><a class="dropdown-item" href="ToyKides_Products.html">Toy</a></li>
+                            <li><a class="dropdown-item" href="Pans_products.html">Pens</a></li>
+                            <li><a class="dropdown-item" href="Navbar.html">All Products</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button">
                             Categories
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
@@ -1002,8 +853,7 @@
                     <li class="nav-item">
                         <div class="nav-search">
                             <i class="fas fa-search"></i>
-                            <input type="text" id="navSearchInput" placeholder="Search products..."
-                                onkeyup="filterProducts(this.value)">
+                            <input type="text" id="navSearchInput" placeholder="Search products...">
                         </div>
                     </li>
                     <li class="nav-item">
@@ -1211,297 +1061,53 @@
         </div>
     </div>
 
-
-
-
-
-    <!-- Product Details Modal -->
-    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="modalProductName">Product Details</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <img id="modalProductImg"
-                                src="https://i.pinimg.com/736x/00/8c/54/008c54c0c3280aba16e4537d619eed6a.jpg"
-                                class="img-fluid rounded-4 shadow-lg mb-3" alt="Product">
-                        </div>
-                        <div class="col-md-6">
-                            <h3 id="modalProductTitle" class="fw-bold mb-2"></h3>
-                            <div class="product-rating mb-2">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                                <span class="ms-2 text-muted">(128 reviews)</span>
-                            </div>
-                            <p id="modalProductPrice" class="product-price mb-3"></p>
-                            <p id="modalProductDesc" class="text-muted mb-4"></p>
-
-                            <div class="mb-3">
-                                <label class="form-label fw-bold">Edition</label>
-                                <select class="form-select rounded-pill">
-                                    <option selected>Standard Edition</option>
-                                    <option>Premium Pack</option>
-                                    <option>Student Bundle</option>
-                                </select>
-                            </div>
-
-                            <div class="mb-4">
-                                <label class="form-label fw-bold">Quantity</label>
-                                <div class="input-group" style="width: 140px;">
-                                    <button class="btn btn-outline-secondary rounded-start-pill" type="button"
-                                        onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
-                                    <input type="text" id="productQty" class="form-control text-center" value="1"
-                                        readonly>
-                                    <button class="btn btn-outline-secondary rounded-end-pill" type="button"
-                                        onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
-                                </div>
-                            </div>
-
-                            <button class="btn btn-shop w-100 py-3" onclick="showPayment()"><i
-                                    class="fas fa-credit-card me-2"></i>Buy Now</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Payment Modal -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold">Secure Checkout</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <div id="payment-step-1">
-                        <p class="mb-4 text-muted">Scan the QR code below to complete your payment via <strong>KHQR /
-                                ABA Pay</strong>.</p>
-                        <div class="qr-container mb-4">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=StudentShopPayment2026"
-                                class="qr-img" alt="Payment QR">
-                            <p class="text-muted mb-2">Total Amount</p>
-                            <h3 class="payment-total" id="paymentTotal">$0.00</h3>
-                        </div>
-                        <button class="btn btn-shop w-100 py-3" onclick="confirmPayment()"><i
-                                class="fas fa-check me-2"></i>Confirm Payment</button>
-                    </div>
-                    <div id="payment-step-2" class="d-none animate__animated animate__fadeIn py-5">
-                        <i class="fas fa-check-circle success-icon mb-4"></i>
-                        <h2 class="fw-bold mt-3 mb-2">Thank You!</h2>
-                        <p class="text-muted mb-4">Your purchase was successful. We'll notify you once your order is
-                            shipped.</p>
-                        <button class="btn btn-shop mt-4 px-5" data-bs-dismiss="modal"><i
-                                class="fas fa-home me-2"></i>Back to Shop</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Modal -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold"><i class="fas fa-shopping-cart me-2"></i>Shopping Cart</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center py-5">
-                    <i class="fas fa-inbox" style="font-size: 3rem; color: var(--text-muted);"></i>
-                    <p class="mt-3 text-muted">Your cart is currently empty</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
-            <div class="row g-5 mb-5">
+            <div class="row g-4">
                 <div class="col-lg-4">
-                    <h4 class="mb-4"><i class="fas fa-book-open me-2"></i>Student Shop</h4>
-                    <p class="text-light">Empowering students worldwide with premium books, stationery, and academic
-                        tools. Your success is our mission.</p>
+                    <h4 class="mb-4">Student Shop</h4>
+                    <p class="text-muted">Your premium destination for high-quality books, stationery, and student essentials. Designed for the modern learner.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
                 </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-4">Contact Information</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3 text-primary"></i>123 Education Street,
-                            Phnom Penh, Cambodia</li>
-                        <li class="mb-3"><i class="fas fa-phone me-3 text-primary"></i>+855 97 2599127</li>
-                        <li class="mb-3"><i class="fas fa-envelope me-3 text-primary"></i>kkhea933@gmail.com</li>
+                <div class="col-lg-2 col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Products</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted">Categories</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-4">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/share/1HrrPG6CqU/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://t.me/Khann_Khea"><i class="fa-brands fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.tiktok.com/@khea_khea2"><i class="fa-brands fa-tiktok"></i></a>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Categories</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-2">Books & Textbooks</li>
+                        <li class="mb-2">Stationery</li>
+                        <li class="mb-2">Backpacks</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="mb-4">Newsletter</h5>
+                    <p class="text-muted small">Subscribe for exclusive student discounts.</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control rounded-start-pill" placeholder="Email">
+                        <button class="btn btn-primary rounded-end-pill">Join</button>
                     </div>
                 </div>
             </div>
-            <hr style="border-color: rgba(255,255,255,0.1)">
-            <div class="text-center py-4">
-                <p class="text-light mb-0">&copy; 2026 Student Shop. All rights reserved.</p>
+            <hr class="mt-5 mb-4 border-secondary">
+            <div class="text-center text-muted small">
+                <p>&copy; 2026 Student Shop. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle -->
+    <!-- Bootstrap JS (Optional, but kept for other features if needed) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // Banner Slider Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.banner-slide');
-        const totalSlides = slides.length;
-
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[n].classList.add('active');
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(currentSlide);
-        }
-
-        // Auto-advance slides every 5 seconds
-        setInterval(nextSlide, 5000);
-
-        // Product Data
-        const products = [
-            { id: 1, name: "Premium Hardcover Notebook", price: 12.50, img: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "High-quality 120gsm paper, perfect for journaling and note-taking." },
-            { id: 2, name: "Ergonomic Student Backpack", price: 45.00, img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "Water-resistant material with multiple compartments for laptops and books." },
-            { id: 3, name: "Professional Drawing Set", price: 29.99, img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Complete set of 24 graphite pencils and charcoal for art students." },
-            { id: 4, name: "Calculus: Early Transcendentals", price: 85.00, img: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "The definitive guide for engineering and math students." },
-            { id: 5, name: "Mechanical Pencil Set (0.5mm)", price: 8.50, img: "https://images.unsplash.com/photo-1585336139118-132f7f215b2e?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Precision writing tools with comfortable grip and extra lead." },
-            { id: 6, name: "A4 Refillable Binder", price: 15.00, img: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Durable binder with 4 rings, perfect for organizing lecture notes." },
-            { id: 7, name: "Highlighter Pastel Pack", price: 6.99, img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "6 soft pastel colors that don't bleed through paper." },
-            { id: 8, name: "Wireless Silent Mouse", price: 19.50, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Compact and quiet, ideal for library study sessions." },
-            { id: 9, name: "Sticky Note Mega Bundle", price: 10.00, img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Various sizes and colors to keep your reminders organized." },
-            { id: 10, name: "Desktop Organizer Lamp", price: 32.00, img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "LED lamp with built-in pen holder and USB charging port." },
-            { id: 11, name: "World Atlas 2026 Edition", price: 55.00, img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Comprehensive maps and geographical data for social studies." },
-            { id: 12, name: "High-Capacity Power Bank", price: 42.00, img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "Never run out of battery during long library sessions." }
-        ];
-
-        let currentProduct = null;
-        let cartCount = 0;
-
-        // Render Products
-        function renderProducts(filteredList = products) {
-            const grid = document.getElementById('product-grid');
-            const noResults = document.getElementById('noResults');
-
-            if (filteredList.length === 0) {
-                grid.innerHTML = '';
-                noResults.style.display = 'block';
-                return;
-            }
-
-            noResults.style.display = 'none';
-            grid.innerHTML = filteredList.map((p, index) => `
-                <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.05}s">
-                    <div class="product-card" onclick="viewDetails(${p.id})">
-                        <div class="product-img-container">
-                            ${p.badge ? `<div class="badge-container">${getBadgeHTML(p.badge)}</div>` : ''}
-                            <img src="${p.img}" class="product-img" alt="${p.name}">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-name">${p.name}</h5>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="product-price">$${p.price.toFixed(2)}</span>
-                            </div>
-                            <button class="btn btn-view mt-3" onclick="viewDetails(${p.id}); event.stopPropagation();">View Details</button>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function getBadgeHTML(badge) {
-            if (badge === 'New') return '<span class="badge-new">New</span>';
-            if (badge === 'Best Seller') return '<span class="badge-best">Best Seller</span>';
-            if (badge === 'Eco-Friendly') return '<span class="badge-eco">Eco-Friendly</span>';
-            return '';
-        }
-
-        // Search Functionality
-        function filterProducts(query) {
-            const filtered = products.filter(p =>
-                p.name.toLowerCase().includes(query.toLowerCase()) ||
-                p.desc.toLowerCase().includes(query.toLowerCase())
-            );
-            renderProducts(filtered);
-
-            const productsSection = document.getElementById('products');
-            if (productsSection) {
-                productsSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function syncSearch(val) {
-            document.getElementById('navSearchInput').value = val;
-            filterProducts(val);
-        }
-
-        function clearSearch() {
-            document.getElementById('navSearchInput').value = '';
-            renderProducts(products);
-        }
-
-        // View Details
-        function viewDetails(id) {
-            currentProduct = products.find(p => p.id === id);
-            document.getElementById('modalProductName').innerText = currentProduct.name;
-            document.getElementById('modalProductTitle').innerText = currentProduct.name;
-            document.getElementById('modalProductPrice').innerText = `$${currentProduct.price.toFixed(2)}`;
-            document.getElementById('modalProductDesc').innerText = currentProduct.desc;
-            document.getElementById('modalProductImg').src = currentProduct.img;
-            document.getElementById('productQty').value = 1;
-            new bootstrap.Modal(document.getElementById('productModal')).show();
-        }
-
-        function updateQty(val) {
-            const input = document.getElementById('productQty');
-            let current = parseInt(input.value);
-            if (current + val >= 1) input.value = current + val;
-        }
-
-        function showPayment() {
-            const qty = parseInt(document.getElementById('productQty').value);
-            document.getElementById('paymentTotal').innerText = `$${(currentProduct.price * qty).toFixed(2)}`;
-            bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
-            document.getElementById('payment-step-1').classList.remove('d-none');
-            document.getElementById('payment-step-2').classList.add('d-none');
-            new bootstrap.Modal(document.getElementById('paymentModal')).show();
-        }
-
-        function confirmPayment() {
-            document.getElementById('payment-step-1').classList.add('d-none');
-            document.getElementById('payment-step-2').classList.remove('d-none');
-            cartCount += parseInt(document.getElementById('productQty').value);
-            document.getElementById('cart-count').innerText = cartCount;
-        }
-
-        document.addEventListener('DOMContentLoaded', () => renderProducts());
-    </script>
 </body>
 
 </html>
