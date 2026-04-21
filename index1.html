@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Shop | Premium Books & Stationery</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Poppins & Playfair Display -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css for animations -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #1e40af;
+            --accent-purple: #7c3aed;
+            --light-gray: #f8fafc;
+            --dark-gray: #1e293b;
+            --text-muted: #64748b;
+            --premium-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            --transition-speed: 0.35s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background-color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-brand i {
+            -webkit-text-fill-color: var(--primary-blue);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 12px;
+            transition: all var(--transition-speed);
+            color: var(--text-muted) !important;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-blue), var(--accent-purple));
+            transition: width var(--transition-speed);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue) !important;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Search Bar in Navbar */
+        .nav-search {
+            position: relative;
+            max-width: 250px;
+            margin-right: 20px;
+        }
+
+        .nav-search input {
+            border-radius: 50px;
+            padding: 8px 20px 8px 40px;
+            border: 2px solid #e2e8f0;
+            font-size: 0.9rem;
+            transition: all var(--transition-speed);
+            width: 100%;
+        }
+
+        .nav-search input:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            outline: none;
+        }
+
+        .nav-search i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Cart Icon */
+        .cart-icon-wrapper {
+            position: relative;
+            cursor: pointer;
+            font-size: 1.3rem;
+            color: var(--dark-gray);
+            transition: all var(--transition-speed);
+        }
+
+        .cart-icon-wrapper:hover {
+            color: var(--primary-blue);
+            transform: scale(1.15);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #fff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        }
+
+        /* Banner Section */
+        .banner-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 50%, #fef3c7 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-slider-container {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto 50px;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--premium-shadow);
+        }
+
+        .banner-slider {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+            position: relative;
+        }
+
+        .banner-slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .banner-slide.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .banner-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .banner-arrow:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .banner-arrow.prev { left: 20px; }
+        .banner-arrow.next { right: 20px; }
+
+        .banner-text-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .banner-main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-gray);
+            margin-bottom: 15px;
+        }
+
+        .banner-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Products Section */
+        #products {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        /* Product Cards */
+        .product-card {
+            border: none;
+            border-radius: 25px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--card-shadow);
+            transition: all var(--transition-speed);
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: var(--premium-shadow);
+        }
+
+        .product-img-container {
+            height: 280px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f9ff 0%, #f5f3ff 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .product-card:hover .product-img {
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .badge-container {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
+        }
+
+        .badge-new {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+
+        .badge-best {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
+        }
+
+        .product-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-gray);
+        }
+
+        .product-rating {
+            color: #fbbf24;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .btn-view {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-view:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+            color: #fff;
+        }
+
+        /* Modals */
+        .modal-content {
+            border: none;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .modal-header {
+            border-bottom: 1px solid #f1f5f9;
+            padding: 25px 35px;
+        }
+
+        .modal-body {
+            padding: 35px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 80px 0 30px;
+        }
+
+        footer h4, footer h5 {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            margin-right: 15px;
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        #noResults {
+            display: none;
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fas fa-book-open me-2"></i>Student Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" data-bs-toggle="dropdown">Products</a>
+                        <ul class="dropdown-menu border-0 shadow-lg rounded-4 p-2">
+                            <li><a class="dropdown-item rounded-3" href="#" onclick="filterProducts('book')">Books</a></li>
+                            <li><a class="dropdown-item rounded-3" href="#" onclick="filterProducts('pencil')">Pencils</a></li>
+                            <li><a class="dropdown-item rounded-3" href="#" onclick="filterProducts('toy')">Toys</a></li>
+                            <li><a class="dropdown-item rounded-3" href="#" onclick="filterProducts('pen')">Pens</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item">
+                        <div class="nav-search">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="navSearchInput" placeholder="Search products..." onkeyup="filterProducts(this.value)">
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="cart-icon-wrapper" data-bs-toggle="modal" data-bs-target="#cartModal">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-badge" id="cart-count">0</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <div class="container">
+            <div class="banner-slider-container">
+                <div class="banner-slider">
+                    <div class="banner-slide active">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1200&q=80" alt="Banner 1">
+                    </div>
+                    <div class="banner-slide">
+                        <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80" alt="Banner 2">
+                    </div>
+                    <div class="banner-slide">
+                        <img src="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=1200&q=80" alt="Banner 3">
+                    </div>
+                </div>
+                <button class="banner-arrow prev" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>
+                <button class="banner-arrow next" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="banner-text-section">
+                <h1 class="banner-main-title">Premium Student Supplies</h1>
+                <p class="banner-subtitle">Elevate your learning experience with our curated collection of academic essentials.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Our Collection</h2>
+                <p class="section-subtitle">Discover high-quality tools designed for academic excellence.</p>
+            </div>
+
+            <div id="noResults">
+                <i class="fas fa-search mb-3" style="font-size: 3rem; color: var(--text-muted);"></i>
+                <h3>No products found</h3>
+                <p class="text-muted">Try adjusting your search or category filter.</p>
+            </div>
+
+            <div class="row g-4" id="product-grid">
+                <!-- Products will be rendered here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalProductTitle">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <img id="modalProductImg" src="" class="img-fluid rounded-4 shadow-sm" alt="Product">
+                        </div>
+                        <div class="col-md-6">
+                            <h2 id="modalProductName" class="fw-bold mb-3">Product Name</h2>
+                            <div class="product-rating mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                <span class="text-muted ms-2">(4.8/5)</span>
+                            </div>
+                            <h3 id="modalProductPrice" class="text-primary fw-bold mb-4">$0.00</h3>
+                            <p id="modalProductDesc" class="text-muted mb-4">Description goes here.</p>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Quantity</label>
+                                <div class="input-group" style="width: 140px;">
+                                    <button class="btn btn-outline-secondary" type="button" onclick="updateQty(-1)"><i class="fas fa-minus"></i></button>
+                                    <input type="text" id="productQty" class="form-control text-center" value="1" readonly>
+                                    <button class="btn btn-outline-secondary" type="button" onclick="updateQty(1)"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <button class="btn btn-view w-100 py-3" onclick="showPayment()">
+                                <i class="fas fa-shopping-cart me-2"></i>Buy Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold">Secure Checkout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="payment-step-1">
+                        <p class="mb-4 text-muted">Scan the QR code below to complete your payment.</p>
+                        <div class="qr-container mb-4" style="background: #f8fafc; padding: 30px; border-radius: 20px; border: 2px dashed #e2e8f0;">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=StudentShopPayment" class="img-fluid mb-3" alt="QR">
+                            <p class="text-muted mb-1">Total Amount</p>
+                            <h3 class="fw-bold text-primary" id="paymentTotal">$0.00</h3>
+                        </div>
+                        <button class="btn btn-view w-100 py-3" onclick="confirmPayment()">Confirm Payment</button>
+                    </div>
+                    <div id="payment-step-2" class="d-none animate__animated animate__fadeIn py-4">
+                        <i class="fas fa-check-circle text-success mb-4" style="font-size: 4rem;"></i>
+                        <h2 class="fw-bold mb-2">Order Successful!</h2>
+                        <p class="text-muted mb-4">Thank you for your purchase. We'll notify you once your order is shipped.</p>
+                        <button class="btn btn-view px-5" data-bs-dismiss="modal">Back to Shop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold"><i class="fas fa-shopping-cart me-2"></i>Shopping Cart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center py-5">
+                    <i class="fas fa-inbox" style="font-size: 3rem; color: var(--text-muted);"></i>
+                    <p class="mt-3 text-muted">Your cart is currently empty</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-4">
+                    <h4 class="mb-4"><i class="fas fa-book-open me-2"></i>Student Shop</h4>
+                    <p class="text-light">Empowering students worldwide with premium books, stationery, and academic tools.</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-3 text-primary"></i>123 Education Street, Phnom Penh</li>
+                        <li class="mb-3"><i class="fas fa-phone me-3 text-primary"></i>+855 97 2599127</li>
+                        <li class="mb-3"><i class="fas fa-envelope me-3 text-primary"></i>kkhea933@gmail.com</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1)">
+            <div class="text-center py-4">
+                <p class="text-light mb-0">&copy; 2026 Student Shop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Banner Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.banner-slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Product Data
+        const products = [
+            { id: 1, category: "book", name: "Premium Hardcover Notebook", price: 12.50, img: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "High-quality 120gsm paper, perfect for journaling." },
+            { id: 2, category: "toy", name: "Ergonomic Student Backpack", price: 45.00, img: "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "Water-resistant material with multiple compartments." },
+            { id: 3, category: "pencil", name: "Professional Drawing Set", price: 29.99, img: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Complete set of 24 graphite pencils and charcoal." },
+            { id: 4, category: "book", name: "Calculus: Early Transcendentals", price: 85.00, img: "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=500&q=80", badge: "Best Seller", desc: "The definitive guide for engineering students." },
+            { id: 5, category: "pencil", name: "Mechanical Pencil Set (0.5mm)", price: 8.50, img: "https://images.unsplash.com/photo-1585336139118-132f7f215b2e?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Precision writing tools with comfortable grip." },
+            { id: 6, category: "book", name: "A4 Refillable Binder", price: 15.00, img: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Durable binder with 4 rings for organizing notes." },
+            { id: 7, category: "pen", name: "Highlighter Pastel Pack", price: 6.99, img: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "6 soft pastel colors that don't bleed through paper." },
+            { id: 8, category: "toy", name: "Wireless Silent Mouse", price: 19.50, img: "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Compact and quiet, ideal for library study." },
+            { id: 9, category: "pen", name: "Sticky Note Mega Bundle", price: 10.00, img: "https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Various sizes and colors for reminders." },
+            { id: 10, category: "toy", name: "Desktop Organizer Lamp", price: 32.00, img: "https://images.unsplash.com/photo-1534073828943-f801091bb18c?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "LED lamp with built-in pen holder and USB port." },
+            { id: 11, category: "book", name: "World Atlas 2026 Edition", price: 55.00, img: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=500&q=80", badge: "", desc: "Comprehensive maps and geographical data." },
+            { id: 12, category: "toy", name: "High-Capacity Power Bank", price: 42.00, img: "https://images.unsplash.com/photo-1602143399827-bd95967c7c40?auto=format&fit=crop&w=500&q=80", badge: "New", desc: "Never run out of battery during long sessions." }
+        ];
+
+        let currentProduct = null;
+        let cartCount = 0;
+
+        function renderProducts(filteredList = products) {
+            const grid = document.getElementById('product-grid');
+            const noResults = document.getElementById('noResults');
+            if (filteredList.length === 0) {
+                grid.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+            noResults.style.display = 'none';
+            grid.innerHTML = filteredList.map((p, index) => `
+                <div class="col-6 col-md-4 col-lg-3 animate__animated animate__fadeInUp" style="animation-delay: ${index * 0.05}s">
+                    <div class="product-card" onclick="viewDetails(${p.id})">
+                        <div class="product-img-container">
+                            ${p.badge ? `<div class="badge-container"><span class="badge-${p.badge === 'New' ? 'new' : 'best'}">${p.badge}</span></div>` : ''}
+                            <img src="${p.img}" class="product-img" alt="${p.name}">
+                        </div>
+                        <div class="product-info">
+                            <h5 class="product-name">${p.name}</h5>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="mt-auto">
+                                <span class="product-price">$${p.price.toFixed(2)}</span>
+                                <button class="btn btn-view mt-3" onclick="viewDetails(${p.id}); event.stopPropagation();">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function filterProducts(query) {
+            const filtered = products.filter(p =>
+                p.name.toLowerCase().includes(query.toLowerCase()) ||
+                p.desc.toLowerCase().includes(query.toLowerCase()) ||
+                p.category.toLowerCase().includes(query.toLowerCase())
+            );
+            renderProducts(filtered);
+        }
+
+        function viewDetails(id) {
+            currentProduct = products.find(p => p.id === id);
+            document.getElementById('modalProductName').innerText = currentProduct.name;
+            document.getElementById('modalProductTitle').innerText = currentProduct.name;
+            document.getElementById('modalProductPrice').innerText = `$${currentProduct.price.toFixed(2)}`;
+            document.getElementById('modalProductDesc').innerText = currentProduct.desc;
+            document.getElementById('modalProductImg').src = currentProduct.img;
+            document.getElementById('productQty').value = 1;
+            new bootstrap.Modal(document.getElementById('productModal')).show();
+        }
+
+        function updateQty(val) {
+            const input = document.getElementById('productQty');
+            let current = parseInt(input.value);
+            if (current + val >= 1) input.value = current + val;
+        }
+
+        function showPayment() {
+            const qty = parseInt(document.getElementById('productQty').value);
+            document.getElementById('paymentTotal').innerText = `$${(currentProduct.price * qty).toFixed(2)}`;
+            bootstrap.Modal.getInstance(document.getElementById('productModal')).hide();
+            document.getElementById('payment-step-1').classList.remove('d-none');
+            document.getElementById('payment-step-2').classList.add('d-none');
+            new bootstrap.Modal(document.getElementById('paymentModal')).show();
+        }
+
+        function confirmPayment() {
+            document.getElementById('payment-step-1').classList.add('d-none');
+            document.getElementById('payment-step-2').classList.remove('d-none');
+            cartCount += parseInt(document.getElementById('productQty').value);
+            document.getElementById('cart-count').innerText = cartCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => renderProducts());
+    </script>
+</body>
+</html>
