@@ -1,4 +1,4 @@
- function getBadgeHTML(badge) {
+\ function getBadgeHTML(badge) {
             if (badge === 'New') return '<span class="badge-new">New</span>';
             if (badge === 'Best Seller') return '<span class="badge-best">Best Seller</span>';
             if (badge === 'Eco-Friendly') return '<span class="badge-eco">Eco-Friendly</span>';
